@@ -55,7 +55,7 @@ ROOT_URLCONF = 'SMA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\DELL\PycharmProjects\web_app4\SMA\Users\template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
