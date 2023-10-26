@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'Users',
+    'SocialMedia',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'SMA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\DELL\PycharmProjects\web_app4\SMA\Users\template'],
+        'DIRS': [r'C:\Users\DELL\PycharmProjects\web_app4\SMA\Users\template',
+                 r'C:\Users\DELL\PycharmProjects\web_app4\SMA\SocialMedia\template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
