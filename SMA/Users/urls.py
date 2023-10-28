@@ -1,11 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from Users.views import *
-
+from .views import RegisterView
+from .views import LoginView
+from .views import LogoutView
 urlpatterns = [
-    path('login/', login_page, name='login_page'),
-    path('register/', register_page, name='register_page'),
-    path('logout/', logout_page, name='logout_page'),
+    path('login/', LoginView.as_view(), name='login_page'),
+    path('register/', RegisterView.as_view() , name='register_page'),
+    path('logout/', LogoutView.as_view(), name='logout_page'),
 
 
 
