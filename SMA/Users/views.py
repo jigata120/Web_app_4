@@ -15,7 +15,7 @@ from django.views import View
 class LoginView(FormView):
     template_name = 'User_views/Login.html'
     form_class = AuthenticationForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('home_page')
 
     def form_valid(self, form):
         login(self.request, form.get_user())
@@ -25,14 +25,14 @@ class LoginView(FormView):
 class RegisterView(CreateView):
     template_name = 'User_views/Register.html'
     form_class = CreateUserForm
+    success_url = reverse_lazy('home_page')
 
     def form_valid(self, form):
         username = form.cleaned_data['username']
         messages.success(self.request, f'Registered user - {username}')
         return super().form_valid(form)
 
-    def get_success_url(self):
-        return redirect('login_page')
+
 
 class LogoutView(View):
 
