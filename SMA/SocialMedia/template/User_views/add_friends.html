@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add friends</title>
+</head>
+<body>
+
+<p>all the users : </p>
+ <ul>
+    {% for user in Users %}
+    <li>{{user.username}}</li>
+    {% endfor %}
+ </ul>
+
+
+</body>
+</html>
