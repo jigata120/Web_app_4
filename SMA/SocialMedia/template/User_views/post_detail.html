@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <ul>
+         <li class="post">
+          <h3>{{ post.text }}</h3>
+           <img src="{{ post.image.url }}" alt="Post Image" width="300" height="300">
+          <p>Post ID: {{ post.id }}</p>
+          <p>Created at: {{ post.created_at }}</p>
+          <p>Likes: {{ post.likes_count }}</p>
+          <p>User: {{ post.user }}</p>
+         </li>
+      </ul>
+      <div class="saves">
+                  <h4>Saves:</h4>
+                  <ul>
+                      {% for save in post.saves.all %}
+                      <li>{{ save }}</li>
+                      {% endfor %}
+                  </ul>
+              </div>
+       <div class="comments">
+                  <h4>Comments:</h4>
+                  <ul>
+                      {% for comment in post.comments.all %}
+                      {% if comment.user == request.user %}
+                            <p>[You]   -   {{comment.text}}</p>
+                      {% else %}
+                            <p>{{comment.user}}   -   {{comment.text}}</p>
+
+                      {% endif %}
+
+                    {% endfor %}
+                </ul>
+        </div>
+
+      <form action="" method ='post'>
+          {% csrf_token %}
+          {{form}}
+          <input type="submit">
+      </form>
+
+</body>
+</html>
