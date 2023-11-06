@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create your post</title>
-</head>
-<body>
+{% extends 'User_views/base.html' %}
+{% block title %}
+Create your post
+{% endblock title%}
+
+{% block style %}
+{% endblock style %}
+
+{% block body %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>
-
-</html>
+{% endblock body %}
