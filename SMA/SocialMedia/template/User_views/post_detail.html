@@ -10,7 +10,7 @@
           <h3>{{ post.text }}</h3>
            <img src="{{ post.image.url }}" alt="Post Image" width="300" height="300">
           <p>Post ID: {{ post.id }}</p>
-          <p>Created at: {{ post.created_at }}</p>
+          <p>Created at: {{ post.created_at }} - {{ post.created_at|timesince }} ago</p>
           <p>Likes: {{ post.likes_count }}</p>
           <p>User: {{ post.user }}</p>
          </li>
