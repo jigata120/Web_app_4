@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}{% endblock title%}
+      </title>
+    <img> icon </img>
+    <form action="">
+        <input type="text" placeholder="search">
+        <input type="submit">
+    </form>
+    <a href="{% url 'login_page' %}">  Home</a>
+    <a href="{% url 'add_friends_page' %}">  add friends</a>
+    <a href="{% url 'login_page' %}">  marketplace</a>
+    <a href="{% url 'profile_page' %}">  profile</a>
+    <style>
+       {% block style %}{% endblock style %}
+    </style>
+</head>
+<body>
+ {% block body %} {% endblock body%}
+</body>
+</html>
