@@ -1,19 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HOME PAGE</title>
-</head>
-<body>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-        {{ message }}
-    </li>
-    {% endfor %}
-</ul>
-{% endif %}
-</body>
-</html>
+{% extends 'User_views/base.html' %}
+
+{% block title %}
+Home Page
+{% endblock title%}
+
+{% block style %}
+     .posts {
+    list-style: none;
+    padding: 0;
+}
+
+.post {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.likes, .saves, .comments {
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.likes ul, .saves ul, .comments ul {
+    padding: 0;
+    list-style: none;
+}
+
+.likes li, .saves li, .comments li {
+    margin-bottom: 5px;
+}
+
+{% endblock style %}
+{% block body %}
+
+
+    <a href="{% url 'create_post_page' %}">Create Post</a>
+    {% for post in Posts %}
+    <div >
+
+        <ul >
+
+            <li class="post">
+                <a href="{% url 'post_detail_page' post.id %}">{{ post.text }}</a>
+                <p>Post ID: {{ post.id }}</p>
+                <img src="{{ post.image.url }}" alt="Post Image" width="300" height="300">
+                <p>Created at: {{ post.created_at|timesince }}</p>
+                <p>Likes: {{ post.likes_count }}</p>
+                <p>User: {{ post.user }}</p>
+            </li>
+        </ul>
+    </div>
+        {% endfor %}
+
+
+
+{% endblock body %}
+
+
