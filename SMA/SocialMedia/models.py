@@ -7,6 +7,7 @@ class Comment(models.Model):
     text = models.TextField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     #post = models.ForeignKey(Post, on_delete=models.CASCADE)
+#__str__
 
 
 class Post(models.Model):
@@ -19,7 +20,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, blank=True, related_name='likes')
     saves = models.ManyToManyField(User, blank=True, related_name='saves')
     comments = models.ManyToManyField(Comment, blank=True)
-
+#__str__
 class Quotes(models.Model):
     text = models.TextField(max_length=500)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -29,3 +30,4 @@ class Quotes(models.Model):
     likes = models.ManyToManyField(User, blank=True, related_name='users_liked')
     saves = models.ManyToManyField(User, blank=True, related_name='users_commented')
     comments = models.ManyToManyField(Comment, blank=True)
+#__str__
