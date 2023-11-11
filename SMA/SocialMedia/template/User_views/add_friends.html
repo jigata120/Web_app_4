@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>add friends</title>
-</head>
-<body>
 
+
+
+{% extends 'User_views/base.html' %}
+-----------------
+{% block title %}
+add friends
+{% endblock title%}
+------------------
+{% block style %}
+
+{% endblock style %}
+------------------
+{% block body %}
 <p>all the users : </p>
  <ul>
     {% for user in Users %}
     <li>{{user.username}}</li>
     {% endfor %}
  </ul>
+{% endblock body %}
 
 
-</body>
-</html>
+
