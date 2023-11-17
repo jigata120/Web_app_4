@@ -1,59 +1,119 @@
 {% extends 'User_views/base.html' %}
 
 {% block title %}
-Home Page
+
+    Home Page
+
 {% endblock title%}
 
+-------------------
+
 {% block style %}
-     .posts {
-    list-style: none;
-    padding: 0;
-}
 
-.post {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin: 10px 0;
-}
+     .custom-nav-link {
+            font-size: 30px; /* Adjust the font size as needed */
+            /* Add other styles as needed */
+        }
 
-.likes, .saves, .comments {
-    margin-top: 10px;
-    border: 1px solid #eee;
-    padding: 10px;
-}
 
-.likes ul, .saves ul, .comments ul {
-    padding: 0;
-    list-style: none;
-}
 
-.likes li, .saves li, .comments li {
-    margin-bottom: 5px;
-}
+        ::webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        ::webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 6px;
+        }
+
+        ::webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
 
 {% endblock style %}
+
+----------------------
+
 {% block body %}
 
+    <ul class="nav nav-underline d-flex justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active custom-nav-link" aria-current="page" href="#">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="#">Quotes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="#">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-nav-link disabled" aria-disabled="true">Marketplace</a>
+      </li>
+    </ul>
 
-    <a href="{% url 'create_post_page' %}">Create Post</a>
-    {% for post in Posts %}
-    <div >
 
-        <ul >
 
-            <li class="post">
-                <a href="{% url 'post_detail_page' post.id %}">{{ post.text }}</a>
-                <p>Post ID: {{ post.id }}</p>
-                <img src="{{ post.image.url }}" alt="Post Image" width="300" height="300">
-                <p>Created at: {{ post.created_at|timesince }}</p>
-                <p>Likes: {{ post.likes_count }}</p>
-                <p>User: {{ post.user }}</p>
-            </li>
-        </ul>
+<div class="container-fluid">
+    <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-6 offset-md-3">
+            <div class="webkit-scrollbar" style="overflow-y: scroll; height: 540px; width: 670px;">
+                    <!-- Your scrolling content goes here -->
+                    <!-- Adjust the height as needed -->
+                    <p>Scrolling content...</p>
+
+                {% for post in Posts %}
+                  <div class="card text-center mt-3" style="width: 40rem;"  href="{% url 'post_detail_page' post.id %}">
+                    <div class="card-header">
+                       User: {{ post.user }} -{{ post.created_at|timesince }} ago.
+
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">
+                           <strong> {{ post.user }}:</strong> {{ post.text }}
+                        </p>
+                         <div class="col">
+                              <a href="#" >#post</a>
+                              <a href="#" >#IMG</a>
+                              <a href="#" >#PIC</a>
+                              <a href="#" >#PNG</a>
+
+                         </div>
+                      <div class="card-footer text-body-secondary">
+                         <div class="col">
+                          <p class="d-inline">Likes: {{ post.likes_count }} | </p>
+                          <p class="d-inline">Saves: {{ post.saves.count }} | </p>
+                          <p class="d-inline">Comments: {{ post.comments.count }}</p>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-3">
+
+                    </div>
+        </div>
     </div>
-        {% endfor %}
-
-
 
 {% endblock body %}
 
