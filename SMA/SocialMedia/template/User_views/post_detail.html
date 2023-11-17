@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'User_views/base.html' %}
+-----------------
+{% block title %}
+
+{% endblock title%}
+------------------
+{% block style %}
+
+{% endblock style %}
+------------------
+{% block body %}
+
       <ul>
          <li class="post">
           <h3>{{ post.text }}</h3>
@@ -40,9 +45,37 @@
 
       <form action="" method ='post'>
           {% csrf_token %}
-          {{form}}
-          <input type="submit">
+            <div class="input-group">
+                {{ form.text.errors }}
+                <div class="input-group-text">Comment: </div>
+                {{form.text|add_class:" form-control-sm custom-form"}}
+            </div>
+          <!-- Button trigger modal -->
+            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
       </form>
+            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
-</body>
-</html>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock body %}
+
