@@ -1,26 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>
-  tis is login page lol
+{% extends 'Base/base.html' %}
+{% load widget_tweaks %}
+-----------------
+{% block title %}
+Login
+{% endblock title%}
+------------------
+{% block style %}
 
-</p>
-
+{% endblock style %}
+------------------
+{% block body %}
 <form method="post">
     {% csrf_token %}
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
+    <div class="row">
+                    <div class="form-group mb-3">
+                    <h2 class="text-center mb-4">Login</h2>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
+                        {% for field in form %}
+                        <div class="shadow p-2 mb-2 bg-body-tertiary rounded">
 
+                            <div class="input-group p-1">
 
-
-    <input type="submit" value="Create user">
+                                <div class="input-group-text" style="width: 95px;">{{ field.label }}</div>
+                                {{field|add_class:"{% cycle  form-control  form-control  form-control nothing %} custom-form"}}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+    </div>
+    <input type="submit" class="btn btn-primary" name = 'Login' value="Login">
+    <a href="{% url 'register_page' %}" class="btn btn-primary">register</a>
 </form>
 {% if messages %}
 <ul class="messages">
@@ -32,7 +41,6 @@
     {% endfor %}
 </ul>
 {% endif %}
-<a href="{% url 'register_page' %}">register</a>
 
-</body>
-</html>
+
+{% endblock body %}
