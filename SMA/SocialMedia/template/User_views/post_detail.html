@@ -1,4 +1,5 @@
 {% extends 'User_views/base.html' %}
+{% load widget_tweaks %}
 -----------------
 {% block title %}
 
@@ -28,20 +29,7 @@
                       {% endfor %}
                   </ul>
               </div>
-       <div class="comments">
-                  <h4>Comments:</h4>
-                  <ul>
-                      {% for comment in post.comments.all %}
-                      {% if comment.user == request.user %}
-                            <p>[You]   -   {{comment.text}}</p>
-                      {% else %}
-                            <p>{{comment.user}}   -   {{comment.text}}</p>
 
-                      {% endif %}
-
-                    {% endfor %}
-                </ul>
-        </div>
 
       <form action="" method ='post'>
           {% csrf_token %}
@@ -55,10 +43,92 @@
   Launch demo modal
 </button>
       </form>
-            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LikesBackdrop">
+  likes
+</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  comments
 </button>
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title-centered fs-5" id="staticBackdropLabel">Comments</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <div class="list-group">
+              {% for comment in post.comments.all %}
+                  <a href="#" class="list-group-item list-group-item-action {% if comment.user == request.user %}  active {% endif %}">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">List group item heading</h5>
+                      <small>3 days ago</small>
+                    </div>
+                      {% if comment.user == request.user %}
+                            <p class="mb-1">[You]   -   {{comment.text}}</p>
+                      {% else %}
+                        <p class="mb-1">{{comment.user}}   -   {{comment.text}}</p>
+                        <small>-{{comment.user}} .</small>
+
+                      {% endif %}
+                  </a>
+             {% endfor %}
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="LikesBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="likesBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="likesBackdropLabel">Likes</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+          <div class="list-group">
+              {% for like in post.likes.all %}
+                  <a href="#" class="list-group-item list-group-item-action {% if comment.user == request.user %}  active {% endif %}">
+                    <div class="d-flex w-100 justify-content-between">
+                      {% if comment.user == request.user %}
+                         <h5 class="mb-1">[You]</h5>
+                      {% else %}
+                         <h5 class="mb-1">{{like.user}}</h5>
+                      <small>3 days ago</small>
+                    </div>
+                      {% endif %}
+                  </a>
+             {% endfor %}
+          </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
