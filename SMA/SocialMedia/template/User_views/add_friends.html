@@ -12,12 +12,35 @@ add friends
 {% endblock style %}
 ------------------
 {% block body %}
-<p>all the users : </p>
- <ul>
-    {% for user in Users %}
-    <li>{{user.username}}</li>
-    {% endfor %}
- </ul>
+
+
+
+<a href="{% url 'home_page' %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Primary link</a>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Loading...
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+
+          <div class="text-center">
+              <h3>Loading...</h3>
+              <div class="spinner-border m-5" style="width: 4rem; height: 4rem;" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 {% endblock body %}
 
 
