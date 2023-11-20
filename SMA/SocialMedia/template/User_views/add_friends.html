@@ -12,36 +12,115 @@ add friends
 {% endblock style %}
 ------------------
 {% block body %}
+ <div class="container">
+ </div>
+  <div class="row">
+    <div class="col-md-3  bg-primary">.col-md-3 </div>
+    <div class="col-md-6  border-right"bg-danger style="border-right: 1px solid #ccc;" >.col-md-6 .offset-md-3</div>
+     <div class="col-md-3 "bg-success>.col-md-3 </div>
 
+  </div>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Main Content Area -->
+    <div class="col-md-9">
+      <!-- Your main scrolling content goes here -->
+      <h2>Main Content Area</h2>
+      <!-- ... -->
+    </div>
 
+    <!-- Large Sidebar -->
+    <div class="col-md-3 ">
+      <!-- Nav Tabs -->
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-achievements-tab" data-bs-toggle="tab" data-bs-target="#nav-achievements" type="button" role="tab" aria-controls="nav-achievements" aria-selected="true">Achievements</button>
+          <button class="nav-link" id="nav-game-stats-tab" data-bs-toggle="tab" data-bs-target="#nav-game-stats" type="button" role="tab" aria-controls="nav-game-stats" aria-selected="false">Game Stats</button>
+          <button class="nav-link" id="nav-trending-tab" data-bs-toggle="tab" data-bs-target="#nav-trending" type="button" role="tab" aria-controls="nav-trending" aria-selected="false">Trending</button>
+        </div>
+      </nav>
 
-<a href="{% url 'home_page' %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Primary link</a>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Loading...
-</button>
+      <!-- Tab Content -->
+      <div class="tab-content" id="nav-tabContent">
+        <!-- Achievements Tab -->
+        <div class="tab-pane fade show active" id="nav-achievements" role="tabpanel" aria-labelledby="nav-achievements-tab">
+          <h4>Achievements</h4>
+          <!-- Your achievements content goes here -->
+        </div>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
+        <!-- Game Stats Tab -->
+        <div class="tab-pane fade" id="nav-game-stats" role="tabpanel" aria-labelledby="nav-game-stats-tab">
+          <h4>Stats</h4>
+          <!-- Your game stats content goes here -->
+        </div>
 
-          <div class="text-center">
-              <h3>Loading...</h3>
-              <div class="spinner-border m-5" style="width: 4rem; height: 4rem;" role="status">
-                  <span class="visually-hidden">Loading...</span>
+        <!-- Trending Tab -->
+        <div class="tab-pane fade" id="nav-trending" role="tabpanel" aria-labelledby="nav-trending-tab">
+          <h4>Trending</h4>
+          <!-- Your trending content goes here -->
+            <div class="container">
+          <h2 class="mt-5 mb-4">Trending</h2>
+
+          <!-- Trending Carousel -->
+          <div id="trendingCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- Item 1 -->
+              <div class="carousel-item active">
+                <img src="image1.jpg" class="d-block w-100" alt="Trending Item 1">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Trending Item 1</h5>
                 </div>
-          </div>
-      </div>
+              </div>
 
+              <!-- Item 2 -->
+              <div class="carousel-item">
+                <img src="image2.jpg" class="d-block w-100" alt="Trending Item 2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Trending Item 2</h5>
+                </div>
+              </div>
+
+              <!-- Add more items as needed -->
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#trendingCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <!-- Trending Cards -->
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="image3.jpg" class="card-img-top" alt="Trending Item 3">
+                <div class="card-body">
+                  <h5 class="card-title">Trending Item 3</h5>
+                  <p class="card-text">Description of the trending item.</p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+
+          </div>
+        </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 
-
 {% endblock body %}
+
 
 
 
