@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-#from django.http import HttpResponse
-#from django.contrib.auth.forms import UserCreationForm
+# from django.http import HttpResponse
+# from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib.auth.forms import AuthenticationForm
 from django.views import View
+
 
 # Create your views here.
 
@@ -22,6 +23,7 @@ class LoginView(FormView):
         messages.success(self.request, 'You have successfully logged in.')
         return super().form_valid(form)
 
+
 class RegisterView(CreateView):
     template_name = 'User_views/Register.html'
     form_class = CreateUserForm
@@ -33,12 +35,13 @@ class RegisterView(CreateView):
         return super().form_valid(form)
 
 
-
 class LogoutView(View):
 
     def get(self, request):
         logout(self.request)
         return redirect('login_page')
+
+
 ''''
 def login_page(request):
     if request.user.is_authenticated:
