@@ -13,30 +13,31 @@ Login
 <form method="post">
     {% csrf_token %}
     <div class="row">
-                    <div class="form-group mb-3">
-                    <h2 class="text-center mb-4">Login</h2>
+        <div class="form-group mb-3">
+            <h2 class="text-center mb-4">Login</h2>
 
-                        {% for field in form %}
-                        <div class="shadow p-2 mb-2 bg-body-tertiary rounded">
+            {% for field in form %}
+            <div class="shadow p-2 mb-2 bg-body-tertiary rounded">
 
-                            <div class="input-group p-1">
+                <div class="input-group p-1">
 
-                                <div class="input-group-text" style="width: 95px;">{{ field.label }}</div>
-                                {{field|add_class:"{% cycle  form-control  form-control  form-control nothing %} custom-form"}}
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+                    <div class="input-group-text" style="width: 95px;">{{ field.label }}</div>
+                    {{field|add_class:"{% cycle form-control form-control form-control nothing %} custom-form"}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    <input type="submit" class="btn btn-primary" name = 'Login' value="Login">
+    <input type="submit" class="btn btn-primary" name='Login' value="Login">
     <a href="{% url 'register_page' %}" class="btn btn-primary">register</a>
 </form>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-        {{ message }}
+    <li
+    {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+    {{ message }}
     </li>
     {% endfor %}
 </ul>
