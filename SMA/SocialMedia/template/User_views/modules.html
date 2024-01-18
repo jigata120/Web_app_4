@@ -26,6 +26,44 @@
           text-decoration: none;
           color: #000;
       }
+/*         buttons */
+        i{
+            padding-right:0.2em;
+        }
+        button{
+            font-family:"proxima-nova," "Helvetica Neue", "Helvetica", "Arial",sans-serif;
+            padding: 4px 12px;
+            font-size:20px;
+            border: 0em;
+            border-radius: 0.7em;
+            height: 1.9em;
+            cursor: pointer;  
+        }
+        .checkout{
+            background-color: green;
+        }
+        
+        .checkout:hover{
+            background-color: antiquewhite;
+            color:green;
+        }
+        
+        .info{
+            background-color: blue;
+        
+        }
+        .info:hover{
+            background-color: antiquewhite;
+            color:blue;
+        }
+        
+        .delete{
+            background-color: red;
+        }
+        .delete:hover{
+            background-color: antiquewhite;
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +78,11 @@
         </ul>
         
     </nav>
-    
+<!--    buttons  -->
+    <button class="checkout"><i class="fa-solid fa-cart-shopping"></i>Checkout</button>
+    <button class="info"><i class="fa-solid fa-circle-info"></i>Info</button>
+    <button class="delete"><i class="fa-solid fa-trash"></i>Delete</button>
+     
 </body>
 </html>
 
