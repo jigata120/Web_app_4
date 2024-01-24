@@ -1,138 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-      nav{
-          background-color: antiquewhite;
-          text-align: center;
-          height: 50px;
-          font: 20px / 1px, "proxima-nova," "Helvetica Neue", "Helvetica", "Arial",sans-serif;
-          margin-bottom: 1em;
-      }
-      ul{
-          padding: 1em;
-      }
-      ul li{
-          display: inline;
-          padding-right:1.3em;
-          
-      }
-      a{
-          text-decoration: none;
-          color: #000;
-      }
-/*         buttons */
-        i{
-            padding-right:0.2em;
-        }
-        button{
-            font-family:"proxima-nova," "Helvetica Neue", "Helvetica", "Arial",sans-serif;
-            padding: 4px 12px;
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+          nav{
+              background-color: antiquewhite;
+              text-align: center;
+              height: 50px;
+              font: 20px / 1px, "proxima-nova," "Helvetica Neue", "Helvetica", "Arial",sans-serif;
+              margin-bottom: 1em;
+          }
+          ul{
+              padding: 1em;
+          }
+          ul li{
+              display: inline;
+              padding-right:1.3em;
+          }
+          a{
+              text-decoration: none;
+              color: #000;
+          }
+    /*         buttons */
+            i{
+                margin-right:0.2em;
+            }
+            button{
+                font-family:"proxima-nova," "Helvetica Neue", "Helvetica", "Arial",sans-serif;
+                padding: 0.6em 0.8em;
+                font-size:20px;
+                border: 0em;
+                border-radius: 1.1em;
+                
+                cursor: pointer;  
+            }
+            .checkout{
+                background-color: green;
+            }
             
-            font-size:20px;
-            border: 0em;
-            border-radius: 0.7em;
-            height: 1.9em;
-            cursor: pointer;  
+            .checkout:hover{
+                background-color: antiquewhite;
+                color:green;
+            }
+            
+            .info{
+                background-color: blue;
+            
+            }
+            .info:hover{
+                background-color: antiquewhite;
+                color:blue;
+            }
+            
+            .delete{
+                background-color: red;
+            }
+            .delete:hover{
+                background-color: antiquewhite;
+                color:red;
+            }
+    /*         nav-2 */
+            *{
+            padding: 0;
+            margin: 0;
         }
-        .checkout{
-            background-color: green;
+        .nav-2 {
+            background-color: rgba(177, 230, 251, 0.543);
+            padding: 0.1em;
         }
-        
-        .checkout:hover{
-            background-color: antiquewhite;
-            color:green;
+    
+        .nav-2 ul{
+        text-align: right;
+        margin: 1.5em;
+    
         }
-        
-        .info{
-            background-color: blue;
-        
+        .nav-2 li{
+            display: inline;
         }
-        .info:hover{
-            background-color: antiquewhite;
-            color:blue;
+    
+        .nav-2 li button{
+            border-radius: 10px;
+            padding: 0.5em 0.8em;
+            border: none;
+            background: transparent;
+            border: 2px solid transparent;
         }
-        
-        .delete{
-            background-color: red;
+    
+        li button:hover{
+            /* background-color: rgba(137, 214, 243, 0.543);  */
+            border: 2px solid #f3a4ff; 
         }
-        .delete:hover{
-            background-color: antiquewhite;
-            color:red;
+        .nav-2 li button:active{
+            color: #f3a4ff;
         }
-/*         nav-2 */
-        *{
-        padding: 0;
-        margin: 0;
-    }
-    .nav-2 {
-        background-color: rgba(177, 230, 251, 0.543);
-        padding: 0.1em;
-    }
-
-    .nav-2 ul{
-    text-align: right;
-    margin: 1.5em;
-
-    }
-    .nav-2 li{
-        display: inline;
-    }
-
-    .nav-2 li button{
-        border-radius: 10px;
-        padding: 0.5em 0.8em;
-        border: none;
-        background: transparent;
-        border: 2px solid transparent;
-    }
-
-    li button:hover{
-        /* background-color: rgba(137, 214, 243, 0.543);  */
-        border: 2px solid #f3a4ff; 
-    }
-    .nav-2 li button:active{
-        color: #f3a4ff;
-    }
-
-    .nav-2 li button a{
-        text-decoration: none;
-        font-size: 22px;
-        padding: 1em;
-    }
-    .nav-2 li button a:hover{
-        color: #f3a4ff;
-    }
-    </style>
-<!--     style -->
-</head>
-<body>
-<!--     nav1 -->
-    <nav>
+    
+        .nav-2 li button a{
+            text-decoration: none;
+            font-size: 22px;
+            padding: 1em;
+        }
+        .nav-2 li button a:hover{
+            color: #f3a4ff;
+        }
+        </style>
+    <!--     style -->
+    </head>
+    <body>
+    <!--     nav1 -->
+        <nav>
+            <ul type="none">
+                <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href=""><i class="fa-solid fa-book"></i>Library</a></li>
+                <li><a href=""><i class="fa-solid fa-pencil"></i>Applications</a></li>
+                <li><a href=""><i class="fa-solid fa-gears"></i>Settings</a></li>
+            </ul>
+        </nav>
+    <!--     nav-2 -->
+    <nav class="nav-2">
         <ul type="none">
-            <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
-            <li><a href=""><i class="fa-solid fa-book"></i>Library</a></li>
-            <li><a href=""><i class="fa-solid fa-pencil"></i>Applications</a></li>
-            <li><a href=""><i class="fa-solid fa-gears"></i>Settings</a></li>
+            <li><button><a href="">home</a></button></li>
+            <li><button><a href="">about</a></button></li>
+            <li><button><a href="">profile</a></button></li>
+
         </ul>
     </nav>
-<!--     nav-2 -->
+    <!--    buttons  -->
+        <button class="checkout"><i class="fa-solid fa-cart-shopping"></i>Checkout</button>
+        <button class="info"><i class="fa-solid fa-circle-info"></i>Info</button>
+        <button class="delete"><i class="fa-solid fa-trash"></i>Delete</button>
     
-<!--    buttons  -->
-    <button class="checkout"><i class="fa-solid fa-cart-shopping"></i>Checkout</button>
-    <button class="info"><i class="fa-solid fa-circle-info"></i>Info</button>
-    <button class="delete"><i class="fa-solid fa-trash"></i>Delete</button>
-     
-</body>
-</html>
-
-
-
-
-
-
+    </body>
+    </html>
