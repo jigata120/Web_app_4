@@ -65,10 +65,54 @@
             background-color: antiquewhite;
             color:red;
         }
+/*         nav-2 */
+        *{
+        padding: 0;
+        margin: 0;
+    }
+    .nav-2 {
+        background-color: rgba(177, 230, 251, 0.543);
+        padding: 0.1em;
+    }
+
+    .nav-2 ul{
+    text-align: right;
+    margin: 1.5em;
+
+    }
+    .nav-2 li{
+        display: inline;
+    }
+
+    .nav-2 li button{
+        border-radius: 10px;
+        padding: 0.5em 0.8em;
+        border: none;
+        background: transparent;
+        border: 2px solid transparent;
+    }
+
+    li button:hover{
+        /* background-color: rgba(137, 214, 243, 0.543);  */
+        border: 2px solid #f3a4ff; 
+    }
+    .nav-2 li button:active{
+        color: #f3a4ff;
+    }
+
+    .nav-2 li button a{
+        text-decoration: none;
+        font-size: 22px;
+        padding: 1em;
+    }
+    .nav-2 li button a:hover{
+        color: #f3a4ff;
+    }
     </style>
 <!--     style -->
 </head>
 <body>
+<!--     nav1 -->
     <nav>
         <ul type="none">
             <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
@@ -77,6 +121,8 @@
             <li><a href=""><i class="fa-solid fa-gears"></i>Settings</a></li>
         </ul>
     </nav>
+<!--     nav-2 -->
+    
 <!--    buttons  -->
     <button class="checkout"><i class="fa-solid fa-cart-shopping"></i>Checkout</button>
     <button class="info"><i class="fa-solid fa-circle-info"></i>Info</button>
