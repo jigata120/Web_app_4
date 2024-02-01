@@ -476,7 +476,42 @@
       left: 50%;
       transform: translateX(-50%);
     }
-            
+/*       flex structure header, main, aside, footer       */
+        .flex-container {
+          width: 100%;
+          display: flex;
+        }
+        body{
+          background-color : #EEE;
+          padding : 5rem;
+          display : flex;
+          flex-wrap : wrap;
+        }
+        header, main, aside, footer{
+          padding :2rem;
+          background-color : #FFF;
+          border-radius : 0.4rem;
+          color : #000;
+          margin: 1em;}
+         header,footer{
+          flex-basis : 100%;
+         }
+        main{
+          flex : 8 1 40rem;
+          width: 500px;
+          height: 200px;
+        }
+        aside{
+          flex : 2 1 20rem;
+          width: 30%;
+        }
+        .flex-container > div {
+          background-color: #f1f1f1;
+          margin: 10px;
+          padding: 20px;
+          font-size: 30px;
+        }    
+                    
         </style>
     <!--     style -->
         
