@@ -665,6 +665,34 @@
                 transform: translateY(0);
               }
             }
+/*         tooltip */
+             .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-trigger {
+            cursor: pointer;
+            border-bottom: 1px dashed #e74c3c;
+            color: #e74c3c;
+            position: relative;
+        }
+
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            top: 30px; /* Adjust the distance from the trigger */
+        }
+
+        .tooltip-container:hover .tooltip-content {
+            display: block;
+        }
         
                 </style>
                 
