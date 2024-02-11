@@ -192,3 +192,175 @@
     </footer>
 </body>
 </html>
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    padding: 0.3em 1.3em;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+
+}
+.title h1{
+    color: blueviolet;
+}
+.title span{
+    font-size: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+section{
+    margin:3em 0em ;
+}
+.q{
+    display: flex;
+}
+.col{
+    width: 60%;
+
+}
+.col p{
+    text-align: start;
+    margin: 1em 0em ;
+}
+.col button{
+    background-color: transparent;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.planet{
+    width: 40%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+.pic_planet{
+    
+    overflow: hidden;
+}
+.infoh1{
+    text-align: center;
+    margin-bottom: 2em ;
+
+}
+.team{
+    display:flex;
+    
+    flex-wrap: wrap;
+}
+.member{
+    width: 40%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.picture{
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.infomember p , footer .footh1{
+ text-align: center;
+}
+.rank{
+    padding-bottom: 1em;
+}
+.membername{
+    padding-top: 1em;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 2em -2em;
+    background-color: blueviolet;
+}
+
+footer h2{
+    color: aliceblue;
+}
+
+.fromdiv{
+    padding: 1em 0em;
+}
+
+.fromdiv input{
+    width: 65%;
+    display: inline-block;
+}
+
+.footh1 button{
+    padding: 0.5em;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+    .navbar {
+    
+    overflow: hidden;
+    display: none; 
+    }
+
+    .navbar a  {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    .navbar a:hover {
+    background-color: #eceaea67;
+    color: black;
+    }
+@media (min-width:645px){
+   .member{
+    width: 28%;
+
+   } 
+   .navbar{
+    display: block;
+   }
+   .nav{
+    display: none;
+   }
+
+}
+
+@media (min-width:1000px){
+    .team {width: 70%;   
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .q{ width: 80%;}
+    section{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
