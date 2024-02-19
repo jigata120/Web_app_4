@@ -884,33 +884,52 @@ h1{
     <!--     style -->
         
 <!--     script     -->
-        <script>
-            //modal
-          function openModal() {
-            document.getElementById('modal').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-          }
-        
-          function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-          }
-        
-          function confirmAction() {
-            alert('Action Confirmed!');
-            closeModal();
-          }
-            //collapse// 
-            function toggleContent() {
-                var content = document.getElementById('collapsibleContent');
-                content.classList.toggle('active');
-            }
-            // notification/alert
-              <script>
-                function closeNotification() {
-                  document.querySelector('.notification').style.display = 'none';
+            <script>
+                //modal
+              function openModal() {
+                document.getElementById('modal').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+              }
+            
+              function closeModal() {
+                document.getElementById('modal').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+              }
+            
+              function confirmAction() {
+                alert('Action Confirmed!');
+                closeModal();
+              }
+                //collapse// 
+                function toggleContent() {
+                    var content = document.getElementById('collapsibleContent');
+                    content.classList.toggle('active');
                 }
+                // notification/alert
+                  <script>
+                    function closeNotification() {
+                      document.querySelector('.notification').style.display = 'none';
+                    }
               </script>
+        
+             <script>
+                 //image generator
+                function generateImage() {
+                    const text = document.getElementById('textInput').value;
+                    const imageContainer = document.getElementById('imageContainer');
+                    
+                    // You can make an AJAX call here to fetch image based on text input
+                    // For demonstration purposes, let's just display a placeholder image
+                    const placeholderImageUrl = 'https://source.unsplash.com/featured/?' + text;
+                    
+                    const imageElement = document.createElement('img');
+                    imageElement.setAttribute('src', placeholderImageUrl);
+                    imageElement.setAttribute('class', 'img-fluid');
+                    
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(imageElement);
+                }
+            </script>
                 
         </script>
         
