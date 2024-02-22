@@ -6,6 +6,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Hydr4 - JS Slider</title>
+    <script>
+        var swiper = new Swiper(".swiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 3,
+            slideShadows: true
+          },
+          keyboard: {
+            enabled: true
+          },
+          mousewheel: {
+            thresholdDelta: 70
+          },
+          loop: true,
+                  pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 1
+            },
+            1024: {
+              slidesPerView: 2
+            },
+            1560: {
+              slidesPerView: 3
+            }
+          }
+        });
+
+    </script>
     <style>
           @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
 * {
