@@ -57,8 +57,8 @@ ROOT_URLCONF = 'SMA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\DELL\PycharmProjects\web_app4\SMA\Users\template',
-                 r'C:\Users\DELL\PycharmProjects\web_app4\SMA\SocialMedia\template'],
+        'DIRS': [os.path.join(BASE_DIR, 'SocialMedia/template'),
+                 os.path.join(BASE_DIR, 'Users/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
