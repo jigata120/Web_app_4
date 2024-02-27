@@ -18,10 +18,14 @@ class ProfileView( views.TemplateView):#LoginRequiredMixin,
     template_name = 'User_views/profile.html'
 
 
-class HomeView(views.ListView):#LoginRequiredMixin,
-    template_name = 'User_views/index.html'
+class MainView(views.ListView):#LoginRequiredMixin,
+    template_name = 'User_views/main.html'
     model = Post
     context_object_name = 'Posts'
+# class HomeView(views.ListView):#LoginRequiredMixin,
+#     template_name = 'User_views/index.html'
+#     model = Post
+#     context_object_name = 'Posts'
     # paginate_by =8
 
     # def get_ordering(self):
