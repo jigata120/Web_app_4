@@ -7,18 +7,18 @@ from .forms import *
 
 
 # Create your views here.
-class AddFriendsView(LoginRequiredMixin, views.ListView):
+class AddFriendsView( views.ListView):#LoginRequiredMixin,
     template_name = 'User_views/add_friends.html'
     model = User
     context_object_name = 'Users'
     # paginate_by = 8
 
 
-class ProfileView(LoginRequiredMixin, views.TemplateView):
+class ProfileView( views.TemplateView):#LoginRequiredMixin,
     template_name = 'User_views/profile.html'
 
 
-class HomeView(LoginRequiredMixin, views.ListView):
+class HomeView(views.ListView):#LoginRequiredMixin,
     template_name = 'User_views/index.html'
     model = Post
     context_object_name = 'Posts'

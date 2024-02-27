@@ -57,8 +57,8 @@ ROOT_URLCONF = 'SMA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\DELL\PycharmProjects\web_app4\SMA\Users\template',
-                 r'C:\Users\DELL\PycharmProjects\web_app4\SMA\SocialMedia\template'],
+        'DIRS': [os.path.join(BASE_DIR, 'SocialMedia/template'),
+                 os.path.join(BASE_DIR, 'Users/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,15 +77,16 @@ LOGIN_URL = '/login/'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '5ROlpWjWIbg4yNpoOhYc',
-        'HOST': 'containers-us-west-150.railway.app',
-        'PORT': '7045',
+        'PASSWORD': 'GDEEg363Cb22e1ffE3BBdbBcDB52c3gG',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '17196',
     }
 }
 
