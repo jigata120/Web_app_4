@@ -1,0 +1,259 @@
+
+{% extends 'User_views/base.html' %}
+{% load static %}
+<!--  -->
+{% block title %}
+
+    Main Page
+
+{% endblock title%}
+<!-- ------------------- -->
+{% block links %}
+<link rel="stylesheet" href="{% static 'SocialMedia/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'SocialMedia/css/podcast.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+
+{% endblock links %}
+<!--  -->
+
+{% block style %}
+
+
+
+{% endblock style %}
+<!--  -->
+---------------------------------------------------------------------------------------------------------------------
+<!--  -->
+{% block body %}
+<div class="projects-section"> 
+             
+    <div class="projects-section-header">
+        <p>HOME</p>
+        <p class="time">December, 12</p>
+        </div>
+        <div class="projects-section-line">
+            <div class="projects-status">
+            <div class="item-status">
+            <span class="status-number">45</span>
+            <span class="status-type">In Progress</span>
+            </div>
+            <div class="item-status">
+            <span class="status-number">24</span>
+            <span class="status-type">Upcoming</span>
+            </div>
+            <div class="item-status">
+            <span class="status-number">62</span>
+            <span class="status-type">Total Projects</span>
+            </div>
+            </div>
+            <div class="view-actions">
+            <button class="view-btn list-view" title="List View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+            </button>
+            <button class="view-btn grid-view active" title="Grid View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" /></svg>
+            </button>
+            </div>
+            </div>
+<!-- #############################################################3 -->
+        <div class="project-boxes jsGridView"> 
+            <!-- section-padding-->
+            <section class="trending-podcast-section ">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <div class="section-title-wrap mb-5">
+                                <h4 class="section-title">Trending episodes</h4>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block custom-block-full">
+                                <div class="custom-block-image-wrap">
+                                    <a href="detail-page.html">
+                                        <img src="https://img.youtube.com/vi/LAmGfokvgzA/hqdefault.jpg" 
+                                        class="custom-block-image img-fluid" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="custom-block-info">
+                                    <h5 class="mb-2">
+                                        <a href="detail-page.html">
+                                            Vintage Show
+                                        </a>
+                                    </h5>
+
+                                    <div class="profile-block d-flex">
+                                        <img src="https://via.placeholder.com/150"
+                                         class="profile-block-image img-fluid" alt="">
+
+                                        <p>Elsa
+                                            <strong>Influencer</strong></p>
+                                    </div>
+
+                                    <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                                    <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                        <a href="#" class="bi-headphones me-1">
+                                            <span>100k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-heart me-1">
+                                            <span>2.5k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-chat me-1">
+                                            <span>924k</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="social-share d-flex flex-column ms-auto">
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-heart"></i>
+                                    </a>
+
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-bookmark"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block custom-block-full">
+                                <div class="custom-block-image-wrap">
+                                    <a href="detail-page.html">
+                                        <img src="images/podcast/27670664_7369753.jpg" class="custom-block-image img-fluid" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="custom-block-info">
+                                    <h5 class="mb-2">
+                                        <a href="detail-page.html">
+                                            Vintage Show
+                                        </a>
+                                    </h5>
+
+                                    <div class="profile-block d-flex">
+                                        <img src="images/profile/cute-smiling-woman-outdoor-portrait.jpg" class="profile-block-image img-fluid" alt="">
+
+                                        <p>
+                                            Taylor
+                                            <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                            <strong>Creator</strong>
+                                        </p>
+                                    </div>
+
+                                    <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                                    <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                        <a href="#" class="bi-headphones me-1">
+                                            <span>100k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-heart me-1">
+                                            <span>2.5k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-chat me-1">
+                                            <span>924k</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="social-share d-flex flex-column ms-auto">
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-heart"></i>
+                                    </a>
+
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-bookmark"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="custom-block custom-block-full">
+                                <div class="custom-block-image-wrap">
+                                    <a href="detail-page.html">
+                                        <img src="images/podcast/12577967_02.jpg" class="custom-block-image img-fluid" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="custom-block-info">
+                                    <h5 class="mb-2">
+                                        <a href="detail-page.html">
+                                            Daily Talk
+                                        </a>
+                                    </h5>
+
+                                    <div class="profile-block d-flex">
+                                        <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg" class="profile-block-image img-fluid" alt="">
+
+                                        <p>
+                                            William
+                                            <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                            <strong>Vlogger</strong></p>
+                                    </div>
+
+                                    <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
+
+                                    <div class="custom-block-bottom d-flex justify-content-between mt-3">
+                                        <a href="#" class="bi-headphones me-1">
+                                            <span>100k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-heart me-1">
+                                            <span>2.5k</span>
+                                        </a>
+
+                                        <a href="#" class="bi-chat me-1">
+                                            <span>924k</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="social-share d-flex flex-column ms-auto">
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-heart"></i>
+                                    </a>
+
+                                    <a href="#" class="badge ms-auto">
+                                        <i class="bi-bookmark"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+<!-- #############################################################3 -->
+   
+</div>
+
+
+{% endblock body %}
+<!--  -->
+-----------------------------------------------------------------------------------------------------------------------
+<!--  -->
+{% block script %} 
+ 
+{% endblock script%}
+
