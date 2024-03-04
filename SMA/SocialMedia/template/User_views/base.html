@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    {% block links %}{% endblock links %}
     <link rel="stylesheet" href="{% static 'SocialMedia/css/main.css' %}">
 </head>
 <!--  -->
@@ -192,7 +193,7 @@
     </div>
     </div>
 
-    <script src="main.js"></script>
+    
     <footer>
         <menu class="menu" style="--timeOut: none">
             <button class="menu__item active" style="--bgColorItem: #ff8c00">
@@ -263,62 +264,12 @@
               </clipPath>
             </svg>
           </div>
-        <script src="/js/main.js" crossorigin=""></script>  
-        <script>
-            "use strict"; 
-            
-            const body = document.body;
-            const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
-            const menu = body.querySelector(".menu");
-            const menuItems = menu.querySelectorAll(".menu__item");
-            const menuBorder = menu.querySelector(".menu__border");
-            let activeItem = menu.querySelector(".active");
-            
-            function clickItem(item, index) {
-            
-                menu.style.removeProperty("--timeOut");
-                
-                if (activeItem == item) return;
-                
-                if (activeItem) {
-                    activeItem.classList.remove("active");
-                }
-            
-                
-                item.classList.add("active");
-                body.style.backgroundColor = bgColorsBody[index];
-                activeItem = item;
-                offsetMenuBorder(activeItem, menuBorder);
-                
-                
-            }
-            
-            function offsetMenuBorder(element, menuBorder) {
-            
-                const offsetActiveItem = element.getBoundingClientRect();
-                const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth  - offsetActiveItem.width) / 2) +  "px";
-                menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
-            
-            }
-            
-            offsetMenuBorder(activeItem, menuBorder);
-            
-            menuItems.forEach((item, index) => {
-            
-                item.addEventListener("click", () => clickItem(item, index));
-                
-            })
-            
-            window.addEventListener("resize", () => {
-                offsetMenuBorder(activeItem, menuBorder);
-                menu.style.setProperty("--timeOut", "none");
-            });
-        </script>  
-    </footer> 
+    </footer>                             
 
  </div>
 
 </body>
 </html>
 <!-- script -->
-{% block script %} {% endblock script%}
+<script src="{% static 'SocialMedia/js/main.js' %}" crossorigin=""></script>       
+{% block script %}{% endblock script%}
