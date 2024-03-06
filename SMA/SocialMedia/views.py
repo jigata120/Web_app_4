@@ -8,7 +8,7 @@ from .forms import *
 
 # Create your views here.
 class AddFriendsView( views.ListView):#LoginRequiredMixin,
-    template_name = 'User_views/add_friends.html'
+    template_name = 'User_views/main2.html'
     model = User
     context_object_name = 'Users'
     # paginate_by = 8
