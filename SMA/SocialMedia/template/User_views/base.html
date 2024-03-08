@@ -7,12 +7,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>PODTENT</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/V62DXqV0/137f2a8be71041113f762c7dece084b3.png">
     {% block links %}{% endblock links %}
     <link rel="stylesheet" href="{% static 'SocialMedia/css/main.css' %}">
-</head>
+ 
 <!--  -->
     <style>
+      .logo {
+        display: block;
+        margin: 0  ; /* Center the logo */
+        max-width: 100%; /* Ensure the logo is responsive */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      .logo:hover {
+        opacity: 0.8; /* Add a simple hover effect */
+      }
+      .logo-header {
+      align-self: center;
+      display: block;
+      width: 12%;
+      height: auto;
+
+      }
        {% block style %}{% endblock style %}
     </style>
 <!--  -->
@@ -21,8 +39,10 @@
   <div class="app-container">
     <div class="app-header">
     <div class="app-header-left">
-    <span class="app-icon"></span>
-    <p class="app-name">DASHBOARD</p>
+      <a href="/" class="logo-header">
+        <img src="https://i.postimg.cc/V62DXqV0/137f2a8be71041113f762c7dece084b3.png" alt="Your Website Name" class="logo">
+    </a>
+     <p class="app-name">PODTEND</p> 
     <div class="search-wrapper">
     <input class="search-input" type="text" placeholder="Search">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
