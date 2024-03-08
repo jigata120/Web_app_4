@@ -7,7 +7,7 @@
 
 {% endblock title%}
 <!-- ------------------- -->
-
+{% block links %}{% endblock links %}
 <!--  -->
 {% block style %}
 
@@ -307,7 +307,7 @@
 -----------------------------------------------------------------------------------------------------------------------
 <!--  -->
 {% block script %} 
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
 	var modeSwitch = document.querySelector('.mode-switch');
 	modeSwitch.addEventListener('click', function () { document.documentElement.classList.toggle('dark');
@@ -335,5 +335,5 @@
 	document.querySelector('.messages-section').classList.remove('show');
 	});
 	});
-</script>
+</script> -->
 {% endblock script%}
