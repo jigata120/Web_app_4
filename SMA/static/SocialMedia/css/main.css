@@ -267,14 +267,14 @@ justify-content: space-between;
 align-items: center;
 padding-bottom: 32px;
 }
-.projects-section-header {
+.projects-section-header, .projects-section-header-messages{
 display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 24px;
 color: var(--main-color);
 }
-.projects-section-header p {
+.projects-section-header p, .projects-section-header-messages p {
 font-size: 24px;
 line-height: 32px;
 font-weight: 700;
@@ -282,7 +282,7 @@ opacity: 0.9;
 margin: 0;
 color: var(--main-color);
 }
-.projects-section-header .time {
+.projects-section-header .time, .projects-section-header-messages{
 font-size: 20px;
 }
 .projects-status {
@@ -363,13 +363,15 @@ border: none;
 background-color: transparent;
 color: var(--main-color);
 display: none;
+
 }
 .messages-section.show {
 transform: translateX(0);
 opacity: 1;
 margin-left: 0;
 }
-.messages-section .projects-section-header {
+
+.messages-section .projects-section-header{
 position: sticky;
 top: 0;
 z-index: 1;
@@ -451,6 +453,12 @@ margin-bottom: 0;
 .project-boxes {
 margin: 0 -8px;
 overflow-y: auto;
+/*  */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/*  */
 }
 .project-boxes.jsGridView {
 display: flex;
@@ -758,7 +766,7 @@ height: 24px;
 .app-header {
 padding: 10px;
 }
-.projects-section-header p, .projects-section-header .time {
+.projects-section-header p, .projects-section-header .time, .projects-section-header-messages .time{
 font-size: 18px;
 }
 .status-type {
@@ -962,4 +970,94 @@ top: 10px;
         font-size: .8em;
     }
     }
+ 
+    /* ICONS */
+.trending-podcast-section {
+  padding-bottom: 60px;
+}
 
+ /* Base Styles */
+ :root {
+  --heart-color: red;
+  --bookmark-color: #fdfa12; /* A bright blue for neon effect */
+  --transition-duration: 0.3s;
+  --glow-effect: 0 0 5px, 0 0 10px, 0 0 15px;
+
+}
+
+.social-share a.badge {
+  cursor: pointer;
+  transition: transform var(--transition-duration);
+}
+
+.social-share a.badge:hover {
+  transform: scale(1.1);
+}
+
+/* Icon Specific Styles with Neon Glow */
+.heart-active i.bi-heart{
+  color: rgb(255, 66, 66); /* Core color for neon effect */
+}
+.bookmark-active i.bi-bookmar{
+   color: rgb(244, 250, 53); /* Core color for neon effect */
+  }
+
+.heart-active i.bi-heart {
+  text-shadow: 
+      var(--glow-effect) var(--heart-color), 
+      var(--glow-effect) var(--heart-color), 
+      var(--glow-effect) var(--heart-color);
+}
+
+.bookmark-active i.bi-bookmark {
+  text-shadow: 
+      var(--glow-effect) var(--bookmark-color), 
+      var(--glow-effect) var(--bookmark-color), 
+      var(--glow-effect) var(--bookmark-color);
+}
+/* FIXES */
+ 
+.badge:hover {
+  background-color: gray;
+}
+ 
+/* Logo */
+.logo {
+  display: block;
+  margin: 0  ; /* Center the logo */
+  max-width: 100%; /* Ensure the logo is responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo:hover {
+  opacity: 0.8; /* Add a simple hover effect */
+}
+.logog-header {
+align-self: center;
+display: block;
+width: 12%;
+height: auto;
+
+}
+/* .projects-section-header-messages{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  color: var(--main-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 32px 24px 0 24px;
+  background-color: var(--projects-section);
+  
+}
+.projects-section-header-messages p{
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  opacity: 0.9;
+  margin: 0;
+  color: var(--main-color);
+  } */
+ 
