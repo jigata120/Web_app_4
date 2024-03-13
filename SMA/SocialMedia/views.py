@@ -17,6 +17,11 @@ class AddFriendsView( views.ListView):#LoginRequiredMixin,
 class ProfileView( views.TemplateView):#LoginRequiredMixin,
     template_name = 'User_views/user_profile.html'
 
+class CoursesView( views.TemplateView):#LoginRequiredMixin,
+    template_name = 'User_views/courses.html'
+
+class DetailsView( views.TemplateView):#LoginRequiredMixin,
+    template_name = 'User_views/details.html'
 
 class MainView(views.ListView):#LoginRequiredMixin,
     template_name = 'User_views/main.html'
