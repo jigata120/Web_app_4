@@ -172,7 +172,7 @@ https://templatemo.com/tm-584-pod-talk
   }
   
   .section-padding {
-    padding-top: 50px;
+    /* padding-top: 50px; */
     padding-bottom: 150px;
   }
   
@@ -1155,7 +1155,7 @@ https://templatemo.com/tm-584-pod-talk
       }
   
     .section-padding {
-      padding-top: 50px;
+      /* padding-top: 50px; */
       padding-bottom: 50px;
     }
   
@@ -1207,6 +1207,9 @@ https://templatemo.com/tm-584-pod-talk
       .hero-section {
             background-size: 180% 65%;
           /* T o o p l a t e . c o m   C u s t o m i z e d */
+      }
+      .justify-content-center{
+        gap: 1.5em;
       }
   
     .custom-block .custom-block-top {
@@ -1288,5 +1291,28 @@ https://templatemo.com/tm-584-pod-talk
         var(--glow-effect) var(--bookmark-color), 
         var(--glow-effect) var(--bookmark-color);
   }
-  /* FIXES */
-     
+  /* FIXES */   
+  .episode-text{
+    padding-left:10px ;
+  }
+  .bottom-gap{
+    margin-bottom: 70px;
+  }
+  .top-gap{
+    margin-top: 20px;
+  }
+  
+  .custom-block-image-wrap > a {
+    display: block;
+  }
+  .episode{
+    margin: 20px auto;
+    width: 100%;
+  
+    max-width: 390px;
+    max-height: 80px;
+    margin-bottom: 20px;
+  }
+  .justify-content-center{
+    gap: 2.5em;
+  }
