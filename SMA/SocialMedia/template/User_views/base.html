@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PODTENT</title>
+    <title>Podtent</title>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/V62DXqV0/137f2a8be71041113f762c7dece084b3.png">
     {% block links %}{% endblock links %}
     <link rel="stylesheet" href="{% static 'SocialMedia/css/main.css' %}">
@@ -216,7 +216,7 @@
     
     <footer>
         <menu class="menu" style="--timeOut: none">
-            <button class="menu__item active" style="--bgColorItem: #ff8c00">
+            <button class="menu__item active" style="--bgColorItem: #ff8c00"onclick="window.location.href = '{% url 'add_friends_page' %}';" href="add_friends">
               <script src="https://cdn.lordicon.com/lordicon.js"></script>
               <lord-icon
                   src="https://cdn.lordicon.com/aklfruoc.json"
@@ -226,7 +226,8 @@
               </lord-icon>
             </button>
         
-            <button class="menu__item" style="--bgColorItem: #f54888">
+            <button class="menu__item" style="--bgColorItem: #f54888"onclick="window.location.href = '{% url 'courses_page' %}';" href="/sma/courses">
+              <!-- onclick="window.location.href = '{% url 'main_page' %}';" -->
               <script src="https://cdn.lordicon.com/lordicon.js"></script>
               <lord-icon
                   src="https://cdn.lordicon.com/vdjwmfqs.json"
@@ -236,7 +237,7 @@
               </lord-icon>
             </button>
         
-            <button class="menu__item" style="--bgColorItem: #4343f5">
+            <button class="menu__item" style="--bgColorItem: #4343f5"onclick="window.location.href = '{% url 'main_page' %}';" >
               <svg class="icon" viewBox="0 0 24 24">
                 <path d="M3.4,11.9l8.8,4.4l8.4-4.4"></path>
                 <path d="M3.4,16.2l8.8,4.5l8.4-4.5"></path>
@@ -254,7 +255,7 @@
               </lord-icon>
             </button>
         
-            <button class="menu__item" style="--bgColorItem: #65ddb7">
+            <button class="menu__item" style="--bgColorItem: #65ddb7"onclick="window.location.href = '{% url 'profile_page' %}';" >
               <script src="https://cdn.lordicon.com/lordicon.js"></script>
               <lord-icon
                   src="https://cdn.lordicon.com/kthelypq.json"
