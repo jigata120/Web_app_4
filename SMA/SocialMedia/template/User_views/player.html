@@ -206,6 +206,36 @@ function onYouTubeIframeAPIReady(id) {
 // video iframe launch
 
 
+//search and launch the video
+function searchYouTubeVideos(query) {
+  $.ajax({
+    url: 'https://www.googleapis.com/youtube/v3/search',
+    type: 'GET',
+    dataType: 'json',
+    data: {
+      part: 'snippet',
+      q: query,
+      type: 'video',
+      maxResults: 1,
+      key: 'AIzaSyAhC8-5v4t99yKibB5jZmtYGHRjmT10uqY' // Replace with your actual API key
+    },
+    success: function(response) {
+      if (response.items.length > 0) {
+        var videoId = response.items[0].id.videoId;
+        console.log(videoId);
+        loadVideoById(videoId);
+        // onYouTubeIframeAPIReady(videoId)
+
+        // player.loadVideoById(videoId);
+      }
+    },
+    error: function(response) {
+      console.error("Search API Request Failed", response);
+    }
+  });
+}
+//search and launch the video
+
 
 </script>
 </body>
