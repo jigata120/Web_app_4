@@ -8,7 +8,83 @@
 </head>
 
 
+<style>
+   .player {
+     display: flex;
+     gap: 4em;
+     flex-direction: column;
+ margin: 200px;
+ position: relative;
+ width: 640px; /* Match the width of the player */
+}
 
+
+#player {
+ background-color: #000;
+ display: block;
+   /* Ensures that the player is block-level for layout purposes */
+}
+
+.controls {
+ position: absolute;
+ bottom: 20px;
+ left: 20px;
+ display: flex;
+}
+
+button {
+ margin: 10px;
+ background-color: #00B3FF;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ font-size: 16px;
+ cursor: pointer;
+ transition: background-color 0.3s;
+}
+
+button:hover {
+ background-color: #0094CC;
+}
+
+button.play:before {
+ content: '►';
+}
+
+button.pause:before {
+ content: '❚❚';
+}
+/* Existing styles ... */
+
+.controls input[type=range] {
+ -webkit-appearance: none; /* Override default appearance */
+ width: 100px; /* Width of the slider */
+ margin: 0 10px; /* Margin for spacing */
+ vertical-align: middle; /* Align with other controls */
+}
+
+.controls input[type=range]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ appearance: none;
+ width: 20px; /* Width of the slider thumb */
+ height: 20px; /* Height of the slider thumb */
+ background: #00B3FF; /* Slider thumb color */
+ cursor: pointer; /* Cursor on hover */
+ border-radius: 50%; /* Make the thumb circular */
+}
+
+.controls input[type=range]::-webkit-slider-runnable-track {
+ width: 100%; /* Full-width */
+ height: 8px; /* Track height */
+ background: #ddd; /* Track color */
+ border-radius: 5px; /* Rounded corners */
+}
+
+#player{
+ display: block;
+}
+
+ </style>
 
 
   
