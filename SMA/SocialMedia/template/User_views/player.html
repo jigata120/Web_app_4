@@ -251,6 +251,22 @@ window.addEventListener('resize', function() {
 });
 // dinamic screen lenght
 
+// Function to skip 10 seconds forward
+function skipForward() {
+  if (player && player.getCurrentTime) {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime + 10, true); // Adding 10 seconds to current time
+  }
+}
+
+// Function to skip 10 seconds backward
+function skipBackward() {
+  if (player && player.getCurrentTime) {
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 10, true); // Subtracting 10 seconds from current time
+  }
+}
+
 </script>
 </body>
 </html>
