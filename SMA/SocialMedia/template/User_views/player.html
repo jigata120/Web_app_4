@@ -192,18 +192,18 @@ button.pause:before {
 
 
 // video iframe launch
-function onYouTubeIframeAPIReady(id) {
+function onYouTubeIframeAPIReady(videoId){
    player = new YT.Player('player', {
-      height: '360',
-      width: '640',
-      videoId: id, // Start with an empty video ID or a default one
-      events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-      }
-});
-}
-// video iframe launch
+     height: windowHeight,
+     width: windowWidth,
+     videoId: videoId, // Start with an empty video ID or a default one
+     events: {
+       'onReady': onPlayerReady,
+       'onStateChange': onPlayerStateChange
+     }
+   }); 
+ }
+ // video iframe launch
 
 
 //search and launch the video
@@ -235,7 +235,9 @@ function searchYouTubeVideos(query) {
   });
 }
 //search and launch the video
-
+// dinamic screen lenght
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
 
 </script>
 </body>
