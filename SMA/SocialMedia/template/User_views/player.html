@@ -239,6 +239,18 @@ function searchYouTubeVideos(query) {
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
+console.log("Window width:", windowWidth);
+console.log("Window height:", windowHeight);
+window.addEventListener('resize', function() {
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+
+  console.log("Window width:", windowWidth);
+  console.log("Window height:", windowHeight);
+
+});
+// dinamic screen lenght
+
 </script>
 </body>
 </html>
