@@ -267,6 +267,47 @@ function skipBackward() {
   }
 }
 
+// Example of button click event listeners
+document.getElementById('skipForwardButton').addEventListener('click', skipForward);
+document.getElementById('skipBackwardButton').addEventListener('click', skipBackward);
+
+
+// ###############################
+
+// Function to toggle fullscreen mode
+// Example of button click event listener
+document.getElementById('fullScreenButton').addEventListener('click', toggleFullScreen);
+function toggleFullScreen() {
+  var playerElement = document.getElementById('player');
+  
+  if (playerElement.requestFullscreen) {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      playerElement.requestFullscreen();
+    }
+  } else if (playerElement.mozRequestFullScreen) { /* Firefox */
+    if (document.mozFullScreenElement) {
+      document.mozCancelFullScreen();
+    } else {
+      playerElement.mozRequestFullScreen();
+    }
+  } else if (playerElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    if (document.webkitFullscreenElement) {
+      document.webkitExitFullscreen();
+    } else {
+      playerElement.webkitRequestFullscreen();
+    }
+  } else if (playerElement.msRequestFullscreen) { /* IE/Edge */
+    if (document.msFullscreenElement) {
+      document.msExitFullscreen();
+    } else {
+      playerElement.msRequestFullscreen();
+    }
+  }
+}
+// Function to toggle fullscreen mode
+
 </script>
 </body>
 </html>
