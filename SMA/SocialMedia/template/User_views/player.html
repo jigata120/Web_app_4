@@ -308,6 +308,38 @@ function toggleFullScreen() {
 }
 // Function to toggle fullscreen mode
 
+// ###############################
+
+// Function to increase playback speed
+function increaseSpeed() {
+  if (player && player.setPlaybackRate) {
+    var currentSpeed = player.getPlaybackRate();
+    var newSpeed = currentSpeed + 0.25; // Increase playback speed by 0.25
+    player.setPlaybackRate(newSpeed);
+  }
+  console.log(newSpeed) ;
+  displayElement = document.getElementById('speed-display');
+  displayElement.textContent = newSpeed;
+}
+
+// Function to decrease playback speed
+function decreaseSpeed() {
+  if (player && player.setPlaybackRate) {
+    var currentSpeed = player.getPlaybackRate();
+    var newSpeed = Math.max(0.25, currentSpeed - 0.25); // Decrease playback speed by 0.25, with a minimum of 0.25
+    player.setPlaybackRate(newSpeed);
+  }
+   
+  console.log(newSpeed) ;
+  displayElement = document.getElementById('speed-display');
+  displayElement.textContent = newSpeed;
+}
+
+// Example of button click event listeners
+document.getElementById('increaseSpeedButton').addEventListener('click', increaseSpeed);
+document.getElementById('decreaseSpeedButton').addEventListener('click', decreaseSpeed);
+
+
 </script>
 </body>
 </html>
