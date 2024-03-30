@@ -195,13 +195,18 @@ button.pause:before {
 function onYouTubeIframeAPIReady(videoId){
    player = new YT.Player('player', {
      height: windowHeight,
-     width: windowWidth,
-     videoId: videoId, // Start with an empty video ID or a default one
+     width: windowWidth,  
+     videoId: videoId,
+      // Start with an empty video ID or a default one
+     //  playerVars: {
+     //   listType: 'playlist',
+     //   list: playlistId
+     // }
      events: {
        'onReady': onPlayerReady,
        'onStateChange': onPlayerStateChange
      }
-   }); 
+   });
  }
  // video iframe launch
 
@@ -215,7 +220,7 @@ function searchYouTubeVideos(query) {
     data: {
       part: 'snippet',
       q: query,
-      type: 'video',
+      type: 'video',// type: 'playlist'
       maxResults: 1,
       key: 'AIzaSyAhC8-5v4t99yKibB5jZmtYGHRjmT10uqY' // Replace with your actual API key
     },
