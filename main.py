@@ -47,3 +47,22 @@ if not events:
 for event in events:
     start = event['start'].get('dateTime', event['start'].get('date'))
     print(start, event['summary'])
+###########################
+ from googleapiclient.discovery import build
+from key import API_KEY
+
+sheets = build('sheets', 'v4', developerKey=API_KEY)
+
+# Example: Read data from a Google Sheet
+sheet_id = 'YOUR_SHEET_ID'
+range_name = 'Sheet1!A1:B5'
+result = sheets.spreadsheets().values().get(spreadsheetId=sheet_id, range=range_name).execute()
+values = result.get('values', [])
+
+if not values:
+    print('No data found.')
+else:
+    print('Name, Age:')
+    for row in values:
+        print(row[0], row[1])
+   
