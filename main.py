@@ -32,3 +32,18 @@ else:
     for item in items:
         print(u'{0} ({1})'.format(item['name'], item['id']))
 
+###############################
+        from googleapiclient.discovery import build
+from key import API_KEY
+
+calendar = build('calendar', 'v3', developerKey=API_KEY)
+
+# List the next 10 events from the primary calendar
+events_result = calendar.events().list(calendarId='primary', maxResults=10).execute()
+events = events_result.get('items', [])
+
+if not events:
+    print('No upcoming events found.')
+for event in events:
+    start = event['start'].get('dateTime', event['start'].get('date'))
+    print(start, event['summary'])
