@@ -2,190 +2,67 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Daily UI #009 - Music Player</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css'><link rel="stylesheet" href="./style.css">
-
+  <title>CodePen - Music Player</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="./style.css">
+<script src="https://www.youtube.com/iframe_api"></script>
+  
 </head>
-
-
-<style>
-   .player {
-     display: flex;
-     gap: 4em;
-     flex-direction: column;
- margin: 200px;
- position: relative;
- width: 640px; /* Match the width of the player */
-}
-
-
-#player {
- background-color: #000;
- display: block;
-   /* Ensures that the player is block-level for layout purposes */
-}
-
-.controls {
- position: absolute;
- bottom: 20px;
- left: 20px;
- display: flex;
-}
-
-button {
- margin: 10px;
- background-color: #00B3FF;
- border: none;
- color: white;
- padding: 10px 20px;
- font-size: 16px;
- cursor: pointer;
- transition: background-color 0.3s;
-}
-
-button:hover {
- background-color: #0094CC;
-}
-
-button.play:before {
- content: '►';
-}
-
-button.pause:before {
- content: '❚❚';
-}
-/* Existing styles ... */
-
-.controls input[type=range] {
- -webkit-appearance: none; /* Override default appearance */
- width: 100px; /* Width of the slider */
- margin: 0 10px; /* Margin for spacing */
- vertical-align: middle; /* Align with other controls */
-}
-
-.controls input[type=range]::-webkit-slider-thumb {
- -webkit-appearance: none;
- appearance: none;
- width: 20px; /* Width of the slider thumb */
- height: 20px; /* Height of the slider thumb */
- background: #00B3FF; /* Slider thumb color */
- cursor: pointer; /* Cursor on hover */
- border-radius: 50%; /* Make the thumb circular */
-}
-
-.controls input[type=range]::-webkit-slider-runnable-track {
- width: 100%; /* Full-width */
- height: 8px; /* Track height */
- background: #ddd; /* Track color */
- border-radius: 5px; /* Rounded corners */
-}
-
-#player{
- display: block;
-}
-
- </style>
-
-
-  
 <body>
-   <!-- VIDEO -->
-   <div class="player">
-      <div id="player"></div> <!-- YouTube Player will be inserted here -->
-      <button id="display">display</button>
-      <div class="srch">
-       
-      </div>
-      
-      <div class="controls">
-        <input type="text" id="searchQuery" placeholder="Search for videos">
-      
-        <button id="searchButton">Search</button>
-        <button id="playPauseButton" class="play">Play</button>
-      </div>
-      <input type="range" id="volumeControl" min="0" max="100" value="100"> <!-- Volume slider -->
-  
-    </div>
+ 
+<div class="player" >
+  <div id="container">
+    <div id="player"> </div>
     
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!--VIDEO  -->
-<!-- partial:index.partial.html -->
-<!-- about -->
-<div class="about">
-   <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links logo"></a>
-</div>
-<!-- end about -->
+  </div>
+        <div class="volume-box">
+            <span class="volume-down"><i class="material-icons">remove</i></span>
+            <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                oninput="music.volume = this.value/100">
+            <span class="volume-up"><i class="material-icons">add</i></span>
+        </div>
+        <div class="btn-box">
+          <i class="material-icons favorite active" onclick="handleFavorite()">favorite</i>
+            <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
+            <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+            <i class="material-icons">fullscreen</i>
+            <i class="material-icons" onclick="handleSettings()">settings</i>
+        
+          </div>
+        <div class="music-box">
 
-<div class="wrapper">
-   <div class="content">
-      <div class="topContent">
-         <div class="menuBar">
-            <div class="icon topExpand"></div>
-            <p class="appName">Your Library</p>
-            <div class="icon menuHamburguer"></div>
-         </div>
-         <div class="musicGroups">
-            <!-- Slider main container -->
-            <div class="swiper-container slider-two">
-               <!-- Additional required wrapper -->
-               <div class="swiper-wrapper slider-two">
-               </div>
-
+            <audio class="music-element">
+                <source src="https://hosseinghanbari.ir/other/music-player/autumn.mp3" type="audio/mp3">
+            </audio>
+            <div class="timeline">
+                <span class="current-time">0:0</span>
+                <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
+                <span class="duration">0:0</span>
             </div>
-            <!-- end Slider main container -->
-
-         </div>
-
-      </div>
-      <div class="middleContent">
-
-         <!-- Slider main container -->
-         <div class="swiper-container slider-one">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper slider-one">
+            <div class="controls">
+                <span class="play" onclick="handlePlay()">
+                  <i class="material-icons">keyboard_double_arrow_left</i>
+                </span> 
+                <span class="play" onclick="handlePlay()">
+                  <i class="material-icons">skip_previous</i>
+                </span> 
+                <span class="play" onclick="handlePlay()">
+                  <i class="material-icons">play_arrow</i>
+                </span> 
+                <span class="play" onclick="handlePlay()">
+                  <i class="material-icons">skip_next</i>
+                </span> 
+                <span class="play" onclick="handlePlay()">
+                  <i class="material-icons">keyboard_double_arrow_right</i>
+                </span> 
+                
+                 
+                 
             </div>
-         </div>
-         <!-- end Slider main container -->
-      </div>
-      <div class="bottomContent">
-         <div class="icon bottomExpand"></div>
-         <div class="progressBar">
-            <div class="timer">
-               <span class="currentTime">00:00</span>
-               <span class="endTime"></span>
-            </div>
-            <div class="barTimer"><span class="progress"></span></div>
-         </div>
-         <div class="player">
-            <div class="icon shuffle"></div>
-            <div class="icon prev swiper-button-prev"></div>
-            <div class="btnPlay">
-               <div class="icon play"></div>
-            </div>
-            <div class="icon next swiper-button-next"></div>
-            <div class="icon repeat"></div>
-
-         </div>
-      </div>
-
-      <div class="albumBg">
-         <figure class="bg"><img class="imageBg" src="" alt=""></figure>
-      </div>
-
-   </div>
-   <div class="bodyBg"></div>
-</div>
-<!-- partial -->
+        </div>
+    </div>
+</body>
+</html>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
