@@ -15,72 +15,110 @@
 </head>
 <body>
  
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+</head>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
     
 
-  <div class="offcanvas offcanvas-bottom" style="height: 1230px;" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body"  >
-  
-      <div class="player" >
-        <div id="container">
-          <div id="player"> </div>
-          
-        </div>
-              <div class="volume-box">
-                  <span class="volume-down"><i class="material-icons">remove</i></span>
-                  <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
-                      oninput="music.volume = this.value/100">
-                  <span class="volume-up"><i class="material-icons">add</i></span>
-              </div>
-              <div class="btn-box">
-                <i class="material-icons favorite active" onclick="handleFavorite()">favorite</i>
-                  <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
-                  <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
-                  <i class="material-icons">fullscreen</i>
-                  <i class="material-icons" onclick="handleSettings()">settings</i>
-              
-                </div>
-              <div class="music-box">
-      
-                  <!-- <audio class="music-element">
-                      <source src="https://hosseinghanbari.ir/other/music-player/autumn.mp3" type="audio/mp3">
-                  </audio> -->
-                  <div class="timeline">
-                      <span class="current-time">0:0</span>
-                      <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
-                      <span class="duration">0:0</span>
-                  </div>
-                  <div class="controls">
-                      <span class="play" onclick="handlePlay()">
-                        <i class="material-icons">keyboard_double_arrow_left</i>
-                      </span> 
-                      <span class="play" onclick="handlePlay()">
-                        <i class="material-icons">skip_previous</i>
-                      </span> 
-                      <span class="play" onclick="handlePlay()">
-                        <i class="material-icons">play_arrow</i>
-                      </span> 
-                      <span class="play" onclick="handlePlay()">
-                        <i class="material-icons">skip_next</i>
-                      </span> 
-                      <span class="play" onclick="handlePlay()">
-                        <i class="material-icons">keyboard_double_arrow_right</i>
-                      </span> 
-                      
-                       
-                       
-                  </div>
-              </div>
-          </div>
-      
-       
-    </div>
-    
+<div class="offcanvas offcanvas-bottom" style="height: 1130px;" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <div class="offcanvas-body"  >
+
+    <div class="player" >
+      <div id="container">
+        <div id="player"> </div>
+        
+      </div>
+        <div class="all">
+            <div class="speed">
+              <h3>Speed</h3>
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input type="radio" name="speed-radio" id="decreaseSpeedButton" onclick="increaseSpeed()" disabled>
+                  <i class="material-icons speed-btn ">remove</i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="speed-radio" checked>
+                  <span class="name"id="speed-display">1<span>x</span></span>
+                </label>
+                <label class="radio">
+                  <input type="radio"   name="speed-radio" id="increaseSpeedButton" onclick="decreaseSpeed()" disabled >
+                  <i class="material-icons speed-btn">add</i>
+                </label>
+              </div>
+            </div>
+            <div class="volume-box">
+                <span class="volume-down"><i class="material-icons">remove</i></span>
+                <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                    oninput="music.volume = this.value/100">
+                <span class="volume-up"><i class="material-icons">add</i></span>
+            </div>
+            <div class="quality">
+              <h3>Quality</h3>
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input type="radio" name="quality-radio" >
+                  <span class="name">420p</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="quality-radio">
+                  <span class="name">720p</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="quality-radio"checked>
+                  <span class="name">1080p</span>
+                </label>
+              </div>
+            </div>
+        </div>     
+            <div class="btn-box">
+              <i class="material-icons favorite active" onclick="handleFavorite()">favorite</i>
+                <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
+                <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+                <i class="material-icons fullScreenButton">fullscreen</i>
+                <i class="material-icons settings" onclick="handleSettings()">settings</i>
+           
+              </div>
+            <div class="music-box">
+    
+                <!-- <audio class="music-element">
+                    <source src="https://hosseinghanbari.ir/other/music-player/autumn.mp3" type="audio/mp3">
+                </audio> -->
+                <div class="timeline">
+                    <span class="current-time">0:0</span>
+                    <input type="range" step="1" class="seekbar" value="0" min="0" max="100" oninput="handleSeekBar()">
+                    <span class="duration">0:0</span>
+                </div>
+                <div class="controls">
+                    <span class="play" onclick="skipBackward()">
+                      <i class="material-icons">keyboard_double_arrow_left</i>
+                    </span> 
+                    <span class="play" onclick="handlePlay()">
+                      <i class="material-icons">skip_previous</i>
+                    </span> 
+                    <span class="play playBtn"> 
+                      <i class="material-icons">play_arrow</i>
+                    </span> 
+                    <span class="play" onclick="handlePlay()">
+                      <i class="material-icons">skip_next</i>
+                    </span> 
+                    <span class="play" onclick="skipForward()">
+                      <i class="material-icons">keyboard_double_arrow_right</i>
+                    </span> 
+                    
+                     
+                     
+                </div>
+            </div>
+        </div>
+    
+     
+  </div>
+  
+</div>
+    
 </body>
 </html>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
