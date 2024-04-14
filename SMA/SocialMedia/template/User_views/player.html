@@ -126,25 +126,35 @@
 <script>
 
 
-// video iframe launch
-function onYouTubeIframeAPIReady(videoId){
-   player = new YT.Player('player', {
-     height: windowHeight,
-     width: windowWidth,  
-     videoId: videoId,
-      // Start with an empty video ID or a default one
-     //  playerVars: {
-     //   listType: 'playlist',
-     //   list: playlistId
-     // }
-     events: {
-       'onReady': onPlayerReady,
-       'onStateChange': onPlayerStateChange
-     }
-   });
- }
- // video iframe launch
+let player;
+let playerReady = false;
+//display
+document.querySelector('#display').addEventListener('click', function() {
+  let playerElement = document.querySelector(".player #player");
 
+
+  if (playerElement.style.display === "none") {
+    playerElement.style.display = "block";
+} else {
+  playerElement.style.display = "none";
+}
+});
+
+function displayPlayer(){
+
+}
+//volume
+function onPlayerReady(event) {
+  playerReady = true;
+  updatePlayPauseButton(); // Initialize play/pause button
+  player.setVolume(50); // Set the initial volume to 100%
+}
+
+document.getElementById('volumeControl').addEventListener('input', function() {
+  let volume = this.value;
+  player.setVolume(volume);
+});
+// volume
 
 //search and launch the video
 function searchYouTubeVideos(query) {
