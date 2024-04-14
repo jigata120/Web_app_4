@@ -203,6 +203,11 @@ let seekbar = document.querySelector('.seekbar')
 let currentTimeElement = document.querySelector('.current-time')
 let duration = document.querySelector('.duration')
 
+// like
+let favIcon = document.querySelector('.favorite')
+function handleFavorite() {
+    favIcon.classList.toggle('active');
+}
 // Function to skip 10 seconds forward
 function skipForward() {
   if (player && player.getCurrentTime) {
