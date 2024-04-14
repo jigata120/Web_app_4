@@ -182,20 +182,21 @@ function onPlayerStateChange(event) {
 // button state
  
 // dinamic screen lenght
-let windowWidth = window.innerWidth;
-let windowHeight = window.innerHeight;
-
-console.log("Window width:", windowWidth);
-console.log("Window height:", windowHeight);
-window.addEventListener('resize', function() {
-  windowWidth = window.innerWidth;
-  windowHeight = window.innerHeight;
-
-  console.log("Window width:", windowWidth);
-  console.log("Window height:", windowHeight);
-
-});
-// dinamic screen lenght
+function updatePlayPauseButton() {
+  
+  if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+    // music.play();
+        playBtn.className = 'pause'
+        playBtn.innerHTML = '<i class="material-icons">pause</i>'
+  
+    } else {
+        // music.pause();
+        playBtn.className = 'play'
+        playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+    
+       }
+}
+ 
 
 // Function to skip 10 seconds forward
 function skipForward() {
