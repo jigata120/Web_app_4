@@ -318,6 +318,13 @@ function updateTimeline() {
     }
   }
 }
+seekbar.addEventListener('input', function() {
+  let totalTime = player.getDuration();
+  let timeToChange = (totalTime*this.value)/100;
+  console.log(timeToChange)
+  player.seekTo(timeToChange, true);
+  // player.pauseVideo()
+});
 </script>
 </body>
 </html>
