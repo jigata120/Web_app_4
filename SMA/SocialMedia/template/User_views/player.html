@@ -303,6 +303,21 @@ function formatTime(time) {
   return minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
 }
 
+function updateTimeline() {
+  if (player) {
+    let timeNow = player.getCurrentTime();
+    let totalTime = player.getDuration();
+
+    document.querySelector('.current-time').textContent = formatTime(timeNow);
+    document.querySelector('.duration').textContent = formatTime(totalTime);
+    
+    let progress = (timeNow / totalTime) * 100;
+    
+    if (seekbar) {
+        seekbar.value = progress ;
+    }
+  }
+}
 </script>
 </body>
 </html>
