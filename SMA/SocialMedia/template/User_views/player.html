@@ -146,8 +146,8 @@ function displayPlayer(){
 //volume
 function onPlayerReady(event) {
   playerReady = true;
-  updatePlayPauseButton(); // Initialize play/pause button
-  player.setVolume(50); // Set the initial volume to 100%
+  updatePlayPauseButton(); 
+  player.setVolume(50);  
 }
 
 document.getElementById('volumeControl').addEventListener('input', function() {
@@ -283,7 +283,7 @@ function increaseSpeed() {
 function decreaseSpeed() {
   if (player && player.setPlaybackRate) {
     var currentSpeed = player.getPlaybackRate();
-    var newSpeed = Math.max(0.25, currentSpeed - 0.25); // Decrease playback speed by 0.25, with a minimum of 0.25
+    var newSpeed = Math.max(0.25, currentSpeed - 0.25);  
     player.setPlaybackRate(newSpeed);
   }
    
@@ -296,6 +296,12 @@ function decreaseSpeed() {
 document.getElementById('increaseSpeedButton').addEventListener('click', increaseSpeed);
 document.getElementById('decreaseSpeedButton').addEventListener('click', decreaseSpeed);
 
+//timeline
+function formatTime(time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = Math.ceil(time % 60);
+  return minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+}
 
 </script>
 </body>
