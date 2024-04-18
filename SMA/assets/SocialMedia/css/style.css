@@ -475,3 +475,30 @@ background:#eee;
 .single_advisor_profile:focus .single_advisor_details_info p {
     color: #ffffff;
 }
+@media (max-width: 450px) {
+  .player-sm{
+    bottom: 45px;
+  }
+  .player-sm,#control-panel{
+    width: 100%;
+    
+  }
+  .player-sm .control-panel .controls {
+    height: 90px;
+     gap: 20px;
+    padding-left: 30%;
+    padding-right: 0px;
+
+    
+  }
+  .control-panel .controls >*{
+
+  }
+  .player-sm .control-panel .album-art {
+    width: 100px;
+    height: 100px;
+  }
+  .player-sm .control-panel {
+    height: 100px;
+  }
+}
