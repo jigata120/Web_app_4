@@ -154,6 +154,14 @@ function playSm() {
     return element !== "active" ? infoBar.classList.add('active') : infoBar.classList.remove('active');
   });
 }
+function playbyTheMainBtn() {
+  playBtn.click();
+   
+  // Add any additional functionality here
+}
+
+playBtnSm.addEventListener('click',playbyTheMainBtn);
+
 let player;
 let playerReady = false;
 //display
