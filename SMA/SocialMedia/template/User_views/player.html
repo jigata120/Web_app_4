@@ -140,6 +140,20 @@ function changeStartBtnSmState(){
 
   }
 }
+const playBtnSm = document.getElementById('play-sm');
+const controlPanel = document.getElementById('control-panel');
+const infoBar = document.getElementById('info');
+const summeryBtn = document.getElementById('summary');
+
+function playSm() {
+  Array.from(controlPanel.classList).find(function(element) {
+    return element !== "active" ? controlPanel.classList.add('active') : controlPanel.classList.remove('active');
+  });
+
+  Array.from(infoBar.classList).find(function(element) {
+    return element !== "active" ? infoBar.classList.add('active') : infoBar.classList.remove('active');
+  });
+}
 let player;
 let playerReady = false;
 //display
