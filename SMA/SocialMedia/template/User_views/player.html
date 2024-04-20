@@ -125,7 +125,21 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
 
+console.clear();
+function changeStartBtnSmState(){
+  const playBtnIsActive = playBtn.classList.contains('pause');
+  const playBtnSmIsActive = playBtnSm.classList.contains('active');
+  
+  if (playBtnSm!==playBtn){
+    playSm()
+    console.log(playBtnIsActive)
+    console.log(playBtnSmIsActive)
 
+
+    console.log('changing the sm state')
+
+  }
+}
 let player;
 let playerReady = false;
 //display
