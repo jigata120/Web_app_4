@@ -366,7 +366,21 @@ seekbar.addEventListener('input', function() {
   setInterval(updateTimeline, 1000);
   // Update every second
 //timeline
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Extract the video title from the API response
+      videoTitle = data.items[0].snippet.title;
+    console.log(data);
+    console.log('Video Title:', videoTitle);
+    videos[videoId] = videoTitle;
+    console.log(videos)
 
+  })
+
+  .catch(error => {
+    console.error('Error fetching video title:', error);
+  });
 
 // loadVideoById('nmrgnA9R1E4')
  
