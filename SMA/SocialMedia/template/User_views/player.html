@@ -125,6 +125,29 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
 
+function extractVideoId(url) {
+    let videoId = '';
+    
+    // Match video ID from YouTube URLs with different formats
+    const matches = url.match(/[?&]v=([^&]+)/) || url.match(/youtu\.be\/([^&?]+)/);
+  
+    // If matches are found, extract the video ID
+    if (matches && matches.length > 1) {
+      videoId = matches[1];
+    }
+  
+    return videoId;
+  } 
+
+const videoId =  extractVideoId(VIDEO_URL)
+  // Construct the URL for the API request
+const apiUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet`;
+
+let videos = {
+  '7_LPdttKXPc':"How the Internet Works in 5 Minutes",
+  'j9QmMEWmcfo':"SSL, TLS, HTTPS Explained",
+  'htbY9-yggB0':"What Is Web Hosting? Explained",
+};
 console.clear();
 function changeStartBtnSmState(){
   const playBtnIsActive = playBtn.classList.contains('pause');
