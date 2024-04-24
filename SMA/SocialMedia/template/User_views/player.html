@@ -429,6 +429,21 @@ function launchInitialVideo(index){
   console.log(currentlyLaunchedVideo)
 }
  
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+nextBtn.addEventListener('click',()=>{
+   if (Object.keys(videos)[currentlyLaunchedVideo + 1]) {
+     launchVideoIfThere(1)
+  } 
+})
+
+prevBtn.addEventListener('click',()=>{
+   if (Object.keys(videos)[currentlyLaunchedVideo - 1]) {
+     launchVideoIfThere(-1)
+  } 
+})
+
 </script>
 </body>
 </html>
