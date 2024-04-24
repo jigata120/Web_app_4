@@ -60,27 +60,27 @@
               <div class="radio-inputs">
                 <label class="radio">
                   <input type="radio" name="quality-radio" >
-                  <span class="name">420p</span>
+                  <span class="name" onclick="changeVideoQuality(480)">480p</span>
                 </label>
                 <label class="radio">
                   <input type="radio" name="quality-radio">
-                  <span class="name">720p</span>
+                  <span class="name" onclick="changeVideoQuality(720)">720p</span>
                 </label>
                 <label class="radio">
-                  <input type="radio" name="quality-radio"checked>
+                  <input type="radio" name="quality-radio"checked onclick="changeVideoQuality(1080)">
                   <span class="name">1080p</span>
                 </label>
               </div>
             </div>
         </div>     
-            <div class="btn-box">
-              <i class="material-icons favorite active" onclick="handleFavorite()">favorite</i>
-                <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
-                <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
-                <i class="material-icons fullScreenButton">fullscreen</i>
-                <i class="material-icons settings" onclick="handleSettings()">settings</i>
-           
-              </div>
+        <div class="btn-box">
+          <i class="material-icons favorite" onclick="handleFavorite()">favorite</i>
+            <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
+            <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+            <i class="material-icons fullScreenButton">fullscreen</i>
+            <i class="material-icons settings" onclick="handleSettings()">settings</i>
+       
+          </div>
             <div class="music-box">
     
                 <!-- <audio class="music-element">
@@ -92,25 +92,25 @@
                     <span class="duration">0:0</span>
                 </div>
                 <div class="controls">
-                    <span class="play" onclick="skipBackward()">
-                      <i class="material-icons">keyboard_double_arrow_left</i>
-                    </span> 
-                    <span class="play" onclick="handlePlay()">
-                      <i class="material-icons">skip_previous</i>
-                    </span> 
-                    <span class="play playBtn"> 
-                      <i class="material-icons">play_arrow</i>
-                    </span> 
-                    <span class="play" onclick="handlePlay()">
-                      <i class="material-icons">skip_next</i>
-                    </span> 
-                    <span class="play" onclick="skipForward()">
-                      <i class="material-icons">keyboard_double_arrow_right</i>
-                    </span> 
-                    
-                     
-                     
-                </div>
+                  <span class="play" onclick="skipBackward()">
+                    <i class="material-icons">keyboard_double_arrow_left</i>
+                  </span> 
+                  <span class="play" id="prevBtn" >
+                    <i class="material-icons">skip_previous</i>
+                  </span> 
+                  <span class="play playBtn"> 
+                    <i class="material-icons">play_arrow</i>
+                  </span> 
+                  <span class="play" id="nextBtn"  >
+                    <i class="material-icons">skip_next</i>
+                  </span> 
+                  <span class="play" onclick="skipForward()">
+                    <i class="material-icons">keyboard_double_arrow_right</i>
+                  </span> 
+                  
+                   
+                   
+              </div>
             </div>
         </div>
     
@@ -124,7 +124,11 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
-
+function changeVideoQuality(quality) {
+    if (player) {
+        player.setPlaybackQuality(quality);
+    }
+}
 function extractVideoId(url) {
     let videoId = '';
     
