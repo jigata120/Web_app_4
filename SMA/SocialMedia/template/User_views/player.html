@@ -418,6 +418,16 @@ fetch(apiUrl)
 //   }
 // });
 
+let currentlyLaunchedVideo = 1
+function launchVideoIfThere(turn){
+  loadVideoById(Object.keys(videos)[currentlyLaunchedVideo + turn])
+  currentlyLaunchedVideo = currentlyLaunchedVideo + turn
+  
+}
+function launchInitialVideo(index){
+  loadVideoById(Object.keys(videos)[index])
+  console.log(currentlyLaunchedVideo)
+}
  
 </script>
 </body>
