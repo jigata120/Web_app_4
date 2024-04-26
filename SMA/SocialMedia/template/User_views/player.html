@@ -124,6 +124,26 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
+  function handleModalPinClose(){
+  if (player){
+      if (player.getPlayerState() != YT.PlayerState.PLAYING) {
+          playBtn.click();
+      } 
+        
+       
+    }
+}
+function handlePin(){
+    const modalPinTime = document.querySelector('#exampleModalLabel span')
+    
+    modalPinTime.textContent = formatTime(timeNow2);
+    if (player){
+      if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+        playBtn.click();
+      }
+    }
+  }
+
 function changeVideoQuality(quality) {
     if (player) {
         player.setPlaybackQuality(quality);
