@@ -118,7 +118,35 @@
   </div>
   
 </div>
+<button type="button" id="summary2" class="btn btn-primary" >Open modal for @mdo</button>
     
+    
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" bis_skin_checked="1" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" bis_skin_checked="1">
+    <div class="modal-content" bis_skin_checked="1">
+      <div class="modal-header" bis_skin_checked="1">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New Pin at (<span>3:40</span>) </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="handleModalPinClose()"></button>
+      </div>
+      <div class="modal-body" bis_skin_checked="1">
+        <form>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="recipient-name" class="col-form-label">Title</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" bis_skin_checked="1">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="handleModalPinClose()">Close</button>
+        <button type="button" class="btn btn-primary">Add pin note</button>
+      </div>
+    </div>
+  </div>
+</div> 
 </body>
 </html>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
