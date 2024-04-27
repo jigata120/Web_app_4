@@ -152,12 +152,28 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
-  function handleModalPinClose(){
+const openTimeline=document.getElementById('openTimeline')
+const openTimeline2=document.getElementById('closePinModal')
+function handleAddPin(){
+  pinnedVideoId = Object.keys(videos)[currentlyLaunchedVideo]
+  pinTitle = titleInputPin.value
+  pinMessage = messageTextareaPin.value
+  pinTime = timeNow2
+  addPin(pinnedVideoId,pinTitle,pinMessage,pinTime)
+  console.log(pins)
+  loadPins( pinnedVideoId)
+  openTimeline2.click()
+  openTimeline.click()
+}
+
+function handleModalPinClose(){
   if (player){
       if (player.getPlayerState() != YT.PlayerState.PLAYING) {
           playBtn.click();
       } 
-        
+      titleInputPin.value=''
+      messageTextareaPin.value=''
+ 
        
     }
 }
@@ -200,7 +216,19 @@ let videos = {
   'j9QmMEWmcfo':"SSL, TLS, HTTPS Explained",
   'htbY9-yggB0':"What Is Web Hosting? Explained",
 };
+// Get all radio inputs
+// const qualityRadios = document.querySelectorAll('quality input[name="quality-radio"]');
 
+/ 
+// console.log(  `objs${qualityRadios.length}`)
+// qualityRadios.forEach(function(radio) {
+//     radio.addEventListener('change', function() {
+//         if (this.checked) {
+//             const quality = this.value;
+//             changeVideoQuality(quality);
+//         }
+//     });
+// });
 console.clear();
 function changeStartBtnSmState(){
   const playBtnIsActive = playBtn.classList.contains('pause');
