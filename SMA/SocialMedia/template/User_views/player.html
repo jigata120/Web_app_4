@@ -152,6 +152,24 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
+  function addPin(pinnedVideoId, pinTitle, pinMessage, pinTime) {
+    // Check if the pinnedVideoId exists in pins
+    if (!pins.hasOwnProperty(pinnedVideoId)) {
+        pins[pinnedVideoId] = {
+            'title': "",
+            'pins': []
+        };
+    }
+
+    // Add the new pin object
+    pins[pinnedVideoId].pins.push({
+        'time': pinTime,
+        'title': pinTitle,
+        'message': pinMessage
+    });
+
+     
+}
 const openTimeline=document.getElementById('openTimeline')
 const openTimeline2=document.getElementById('closePinModal')
 function handleAddPin(){
@@ -219,7 +237,7 @@ let videos = {
 // Get all radio inputs
 // const qualityRadios = document.querySelectorAll('quality input[name="quality-radio"]');
 
-/ 
+
 // console.log(  `objs${qualityRadios.length}`)
 // qualityRadios.forEach(function(radio) {
 //     radio.addEventListener('change', function() {
