@@ -173,13 +173,38 @@
               <div class="btn">Show all updates</div> 
             </div>
           </div> 
-        </div>
+        </div>`
 </div> 
 </body>
 </html>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 <script>
+  
+  jQuery(document).ready(function($){
+        function validate1(val) {
+            // Your validation function code here
+        }
+
+        function validate2(val) {
+            // Your validation function code here
+        }
+
+        var current_fs, next_fs, previous_fs;
+
+        $(".next").click(function(){
+            // Your next button click event code here
+        });
+
+        $(".prev").click(function(){
+            // Your previous button click event code here
+        });
+
+        $('.radio-group .radio').click(function(){
+            // Your radio button click event code here
+        });
+    });
+
   let pins = {
         'j9QmMEWmcfo':{
             'title':"SSL, TLS, HTTPS Explained",
