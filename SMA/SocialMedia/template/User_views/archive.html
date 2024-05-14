@@ -1241,3 +1241,749 @@
             <p class="message-line time">
             Dec, 12
             </p>
+        </div>
+    </div>
+    <div class="message-box">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+      <div class="message-content">
+      <div class="message-header">
+      <div class="name">Stephanie</div>
+      <div class="star-checkbox">
+      <input type="checkbox" id="star-1">
+      <label for="star-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+      </label>
+      </div>
+      </div>
+      <p class="message-line">
+      I got your first assignment. It was quite good.  We can continue with the next assignment.
+      </p>
+      <p class="message-line time">
+      Dec, 12
+      </p>
+      </div>
+      </div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="main.js"></script>
+
+<div class="player-sm">
+  <div id="info" class="info" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+    <span class="artist">Flume</span>
+    <span class="name">Say it</span>
+    <div class="progress-bar">
+      <input type="range" step="1" id="seekbarSm" class="seekbar" value="10" min="0" max="100" disabled><!--oninput="handleSeekBar()" -->
+
+      <!-- <div class="bar"></div> -->
+    </div>
+  </div>
+  <div id="control-panel" class="control-panel">
+    <div class="album-art" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"  ></div>
+    <div class="controls-sm">
+      <div class="prev" onclick="playerSmPrev()"></div>
+      <div id="play-sm" class="play-sm"></div>
+      <div class="next" onclick="playerSmNext()"></div>
+    </div>
+  </div>
+</div>
+
+<!-- player -->
+<div class="offcanvas offcanvas-bottom"    tabindex="-1" id="offcanvasBottom" style="height: 70vh;" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header2" data-bs-dismiss="offcanvas" aria-label="Close" onclick="closeBackdrop()">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+    <i class="fa-solid fa-chevron-down" id="chevron"></i>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+  </div>
+  <div class="offcanvas-body">
+    <div class="player">
+      <div id="container">
+        <div id="player"> </div>
+        
+      </div>
+        <div class="all">
+             <div class="skips">
+               <form >
+               <h3>Skip seconds</h3>
+                <div class="radio-inputs">
+                  <label class="radio">
+                    <input type="radio" name="quality-radio" onclick="changeSkipSeconds(5)" >
+                    <span class="name">5s</span>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="quality-radio" checked onclick="changeSkipSeconds(10)">
+                    <span class="name">10s</span>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="quality-radio"onclick="changeSkipSeconds(20)">
+                    <span class="name">20s</span>
+                  </label>
+                </div>
+              </form>
+             </div>
+            <div class="speed">
+              <h3>Speed</h3>
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input type="radio" name="speed-radio" id="decreaseSpeedButton" disabled>
+                  <i class="material-icons  speed-btn " onclick="decreaseSpeed()">remove</i>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="speed-radio" checked>
+                  <p id="speed-display">1<span>X</span></p>
+                </label>
+               
+                <label class="radio">
+                  <input type="radio"   name="speed-radio" id="increaseSpeedButton"  disabled >
+                  <i class="material-icons speed-btn" onclick="increaseSpeed()">add</i>
+                </label>
+              </div>
+            </div>
+            <div class="volume-box">
+                <span class="volume-down"><i class="material-icons">remove</i></span>
+                <label class="slider">
+                  <input type="range" class="level volume-range" step="1" value="80" min="0" max="100">
+                </label>
+                <!-- <input type="range" class="volume-range" step="1" value="80" min="0" max="100"> -->
+                     
+                <span class="volume-up"><i class="material-icons">add</i></span>
+            </div>
+            <div class="quality">
+              <h3>Quality</h3>
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input type="radio" name="quality-radio" >
+                  <span class="name" onclick="changeVideoQuality(480)">480p</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="quality-radio">
+                  <span class="name" onclick="changeVideoQuality(720)">720p</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="quality-radio"checked onclick="changeVideoQuality(1080)">
+                  <span class="name">1080p</span>
+                </label>
+              </div>
+            </div>
+            <div class="subs">
+              <h3>Subs</h3>
+              <div class="radio-inputs">
+                <label class="radio">
+                  <input type="radio" name="quality-radio" checked onclick="HandleSubs(true)">
+                  <span class="name">OFF</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="quality-radio"onclick="HandleSubs(true)">
+                  <span class="name">ON</span>
+                </label>
+                <!-- <label class="radio">
+                  <input type="radio" name="quality-radio"checked>
+                  <span class="name">1080p</span>
+                </label> -->
+              </div>
+            </div>
+            
+            
+        </div>     
+            <div class="btn-box">
+              <i class="material-icons favorite" onclick="handleFavorite()">favorite</i>
+                <i class="material-icons repeat" onclick="handleRepeat()">repeat</i>
+                <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+                <i class="material-icons fullScreenButton">fullscreen</i>
+                <i class="material-icons settings" onclick="handleSettings()">settings</i>
+                <i class="material-icons" onclick="handlePin()" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo2"> add_location </i>
+           
+              </div>
+            <div class="music-box">
+    
+                <!-- <audio class="music-element">
+                    <source src="https://hosseinghanbari.ir/other/music-player/autumn.mp3" type="audio/mp3">
+                </audio> -->
+                <div class="timeline">
+                    <span class="current-time">0:0</span>
+                     <input type="range" step="1" id="seekbar" class="seekbar" value="0" min="0" max="100" ><!--oninput="handleSeekBar()" -->
+                    <span class="duration">0:0</span>
+                </div>
+                <div class="controls">
+                    <span class="play" onclick="skipBackward()">
+                      <i class="material-icons">keyboard_double_arrow_left</i>
+                    </span> 
+                    <span class="play" id="prevBtn" >
+                      <i class="material-icons">skip_previous</i>
+                    </span> 
+                    <span class="play playBtn"> 
+                      <i class="material-icons">play_arrow</i>
+                    </span> 
+                    <span class="play" id="nextBtn"  >
+                      <i class="material-icons">skip_next</i>
+                    </span> 
+                    <span class="play" onclick="skipForward()">
+                      <i class="material-icons">keyboard_double_arrow_right</i>
+                    </span> 
+                     
+                     
+                     
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+
+<!-- summery -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" bis_skin_checked="1" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" bis_skin_checked="1">
+    <div class="modal-content" bis_skin_checked="1">
+      <div class="modal-header" bis_skin_checked="1">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message to </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" bis_skin_checked="1">
+        <form>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" bis_skin_checked="1">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- pin modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" bis_skin_checked="1" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" bis_skin_checked="1">
+    <div class="modal-content" bis_skin_checked="1">
+      <div class="modal-header" bis_skin_checked="1">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">New Pin at (<span>3:40</span>) </h1>
+        <button type="button" id="x-closePin" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="handleModalPinClose()"></button>
+      </div>
+      <div class="modal-body" bis_skin_checked="1">
+        <form>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="recipient-name" class="col-form-label">Title</label>
+            <input type="text" class="form-control" id="recipient-name2">
+          </div>
+          <div class="mb-3" bis_skin_checked="1">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text2"></textarea>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-pin-footer">
+        <a class="menu__link" id="openTimeline" onclick="launchPinTimeline()"  data-bs-toggle="modal" data-bs-target="#exampleModal3" >see pins timeline!</a>
+
+        <div class="modal-footer" bis_skin_checked="1">
+          <button type="button" id = "closePinModal" class="btn btn-secondary" data-bs-dismiss="modal" onclick="handleModalPinClose()">Discard</button>
+          <button type="button" class="btn btn-primary" onclick="handleAddPin()">Add pin note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- pin timeline -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="timelinePin"> 
+        <div class="timelineHeader ">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-dismiss="fade" aria-label="Close"></button>
+
+        </div>     
+        <h3>Updates</h3>
+
+        <label>23 in the last 7 hours</label>
+        <div class="box">
+          
+          <div class="containerPins">
+            
+            <div class="lines" id="containerLineDot">
+            </div> 
+            
+            <div class="cardsPin" id="cardsTimeline">   
+            </div> 
+
+          </div>
+
+          <div class="bottom">
+            <div class="btn">Show all updates</div> 
+          </div>
+        </div> 
+      </div>
+      <!-- <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- creation form modal -->
+<div class="modal fade " id="exampleModal5" tabindex="-1"   aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl">                  
+      <div class="container-fluid   modal-content">                                     
+                 <div class="card b-0">
+                      <h3 class="heading">Request a Quote</h3>
+                      <p class="desc">Fill out the form or call <span class="yellow-text">123 456 7891</span><br>to start protecting your business today!</p>
+      
+                      <ul id="progressbar" class="text-center">
+                          <li class="active step0" id="step1"></li>
+                          <li class="step0" id="step2"></li>
+                          <li class="step0" id="step3"></li>
+                          <li class="step0" id="step4"></li>
+                          <li class="step0" id="step5"></li>
+                      </ul>
+      
+                      <fieldset class="show">
+                  <div class="form-card">
+                      <h5 class="sub-heading">Select Service(s)</h5>
+
+                      <div class="row px-1 radio-group " id="formType" onclick="activateDiv(event,'formType')">
+                          <div class="card-block text-center radio" data-clicked="false">
+                              <div class="image-icon">
+                                  <i class="fa-solid fa-list-ul"></i>                                
+                              </div>
+                              <p class="sub-desc">Playlist</p>
+                          </div>
+                          <div class="card-block text-center radio" data-clicked="false">
+                              <div class="image-icon">
+                                  <i class="fa-solid fa-graduation-cap"></i>                                
+                              </div>
+                              <p class="sub-desc">course</p>
+                          </div>
+                      </div>
+                      
+                      
+                      
+                      
+
+                      <button id="next1" class="btn-block btn-primary mt-3 mb-1 next">NEXT<span class="fa fa-long-arrow-right"></span></button>
+                  </div>
+                      </fieldset>
+
+                      <fieldset  >
+                          <div class="form-card">
+                              <h5 class="sub-heading">Select Service(s)</h5>
+
+                              <div class="row px-1 radio-group " id="formType3" onclick="activateDiv(event,'formType3')">
+                                  <div class="card-block text-center radio" data-clicked="false">
+                                      <div class="image-icon">
+                                          <i class="fa-solid fa-users"></i>                                
+                                      </div>
+                                      <p class="sub-desc">Public</p>
+                                  </div>
+                                  <div class="card-block text-center radio" data-clicked="false">
+                                      <div class="image-icon">
+                                          <i class="fa-solid fa-lock"></i>                                
+                                      </div>
+                                      <p class="sub-desc">Private</p>
+                                  </div>
+                              </div>
+                              <div class="row px-1 radio-group " id="formType2" onclick="activateDiv(event,'formType2')">
+                                  <div class="card-block text-center radio" data-clicked="false">
+                                      <div class="image-icon">
+                                          <i class="fa-solid fa-hand-holding-heart"></i>                                
+                                      </div>
+                                      <p class="sub-desc">Free</p>
+                                  </div>
+                                  <div class="card-block text-center radio" data-clicked="false">
+                                      <div class="image-icon">
+                                          <i class="fa-solid fa-hand-holding-dollar"></i>                                
+                                      </div>
+                                      <p class="sub-desc">Paid</p>
+
+                                  </div>
+                          
+                              </div>
+                              <button id="next1" class="btn-block btn-primary mt-3 mb-1 next">NEXT<span class="fa fa-long-arrow-right"></span></button>
+                              <button class="btn-block btn-secondary mt-3 mb-1 prev"><span class="fa fa-long-arrow-left"></span>PREVIOUS</button>
+                            
+                          </div>
+                      </fieldset>
+      
+                      <fieldset>
+                          <div class="form-card">
+                              <h5 class="sub-heading mb-4">Details</h5>
+      
+                              <label class="text-danger mb-3">Required * </label>
+      
+                              <div class="form-group">
+                                <label class="form-control-label">Nitch * :</label>
+                                <input type="text" id="Nitch" name="Nitch" placeholder="" class="form-control"  onblur="validate2(1)">
+                            </div>
+    
+                            <div class="form-group">
+                                <label class="form-control-label">Title * :</label>
+                                <input type="text" id="Title" name="Title" placeholder="" class="form-control"  onblur="validate2(2)">
+                            </div>
+
+                              <div class="form-group">
+                                
+                                  <label class="form-control-label">Description * :</label>
+                                  <input type="text" id="Description" name="Description" placeholder="" class="form-control"  onblur="validate2(3)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Period In Weeks * :</label>
+                                  <input type="number" id="Weeks" name="Weeks" placeholder="" class="form-control"  onblur="validate2(4)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Level Of Difficulty * :</label>
+                                  <div class="select mb-3">
+                                      <select name="shred-info" class="form-control">
+                                          <option>Basics</option>
+                                          <option>Fundamental</option>
+                                          <option>Advanced</option>
+                                          <option>Specialization</option>    
+                                      </select>
+                                  </div>
+                              </div>
+      
+                              <button id="next3" class="btn-block btn-primary mt-3 mb-1 next mt-4" onclick="validate2(0)">SUBMIT REQUEST<span class="fa fa-long-arrow-right"></span></button>
+      
+                              <button class="btn-block btn-secondary mt-3 mb-1 prev"><span class="fa fa-long-arrow-left"></span>PREVIOUS</button>
+                          </div>
+                      </fieldset>
+
+                      <fieldset>
+                          <div class="form-card">
+                              <h5 class="sub-heading mb-4">Company Details</h5>
+      
+                              <label class="text-danger mb-3">* Required</label>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Company Name * :</label>
+                                  <input type="text" id="cname" name="cname" placeholder="" class="form-control"  onblur="validate2(1)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Zip Code * :</label>
+                                  <input type="text" id="zip" name="zip" placeholder="" class="form-control"  onblur="validate2(2)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Country * :</label>
+                                  <input type="text" id="state" name="state" placeholder="" class="form-control"  onblur="validate2(3)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Price * :</label>
+                                  <input type="number" id="city" name="number" placeholder="" class="form-control"  onblur="validate2(4)">
+                              </div>
+      
+                              <div class="form-group">
+                                  <label class="form-control-label">Payment * :</label>
+                                  <div class="select mb-3">
+                                      <select name="shred-info" class="form-control">
+                                          <option>Purchase</option>
+                                          <option>Subscription</option>
+
+                                      </select>
+                                  </div>
+                              </div>
+      
+                              <button id="next3" class="btn-block btn-primary mt-3 mb-1 next mt-4" onclick="validate2(0)">SUBMIT REQUEST<span class="fa fa-long-arrow-right"></span></button>
+      
+                              <button class="btn-block btn-secondary mt-3 mb-1 prev"><span class="fa fa-long-arrow-left"></span>PREVIOUS</button>
+                          </div>
+                      </fieldset>
+
+                      <fieldset >
+                          <div class="form-card">
+                              <h5 class="sub-heading mb-4">Success!</h5>
+                              <p class="message">Thank You for choosing our website.<br>Quotation will be sent to your Email ID and Contact Number.</p>
+                              <div class="check">
+                                  <div class="tenor-gif-embed" data-postid="20037936" data-share-method="host" data-aspect-ratio="1" data-width="90%"><a href="https://tenor.com/view/green-white-checkmark-shadow-jumping-gif-20037936">Green White Sticker</a>from <a href="https://tenor.com/search/green-stickers">Green Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>                        
+                              </div>
+                          </div>
+                      </fieldset>
+                  </div>
+              </div>
+          </div>
+      </div>
+ 
+
+<!-- Modal details Playlist -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog .modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <section class="latest-podcast-section " id="section_2">
+  <!-- section-padding pb-0 -->
+      <div class="container">
+          <div class="row justify-content-center">
+
+              <div class="col-lg-10 col-12">
+                  <div class="section-title-wrap mb-5">
+                      <h4 class="section-title">Course details</h4>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-lg-3 col-12">
+                          <div class="custom-block-icon-wrap-title">
+                              <div class="custom-block-image-wrap custom-block-image-detail-page custom-block-image-title ">
+                                  <img src="images/podcast/11683425_4790593.jpg" class="  img-fluid" alt="">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-9 col-12">
+                          <div class="custom-block-info">
+                              <div class="custom-block-top d-flex mb-1">
+                                  <small class="me-4">
+                                      <a href="#">
+                                          <i class="bi-play"></i>
+                                          Play now
+                                      </a>
+                                  </small>
+
+                                  <small>
+                                      <i class="bi-clock-fill custom-icon"></i>
+                                      42 Minutes
+                                  </small>
+
+                                  <small class="ms-auto">Episodes <span class="badge">5</span></small>
+                              </div>
+
+                              <h2 class="mb-2">Modern Vintage</h2>
+
+                              <p>What is Content Marketing? If you are wondering what content marketing is all about, this is the place to start.</p>
+
+                              <p>You are not allowed to redistribute this template ZIP file on any other template collection website. Please contact TemplateMo for more information.</p>
+
+                              <p>Pod Talk HTML CSS Template is made by Bootstrap v5.2.2 framework. You are allowed to modify and use this template for your business websites.</p>
+
+                              <div class="profile-block profile-detail-block d-flex flex-wrap align-items-center mt-5">
+                                  <div class="d-flex mb- mb-lg-0 mb-md-0">
+                                      <img src="images/profile/woman-posing-black-dress-medium-shot.jpg" class="profile-block-image img-fluid" alt="">
+                                      <div class="wrapper">
+                                        <input type="checkbox" id="toogle" class="hidden-trigger" />
+                                        <label for="toogle" class="circle">
+                                          <svg
+                                            class="svg"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="48"
+                                            height="48"
+                                            xml:space="preserve"
+                                            version="1.1"
+                                            viewBox="0 0 48 48"
+                                          >
+                                            <image
+                                              width="48"
+                                              height="48"
+                                              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC"
+                                            ></image>
+                                          </svg>
+                                        </label>
+                                      </div>
+                                      <p>
+                                          Elsa
+                                          <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                          <strong>Influencer</strong>
+                                      </p>
+                                  </div>
+                                  <div class="mt-2 mb-3">
+                                    <div class="form-prf">
+                                      <input placeholder="Email Address" class="input-prf" type="text" />
+                                      <div class="btn-prf">SUBSCRIBE</div>
+                                    </div>
+                                    
+                                  </div> 
+
+                                  <!-- <ul class="social-icon ms-lg-auto ms-md-auto">
+                                      <li class="social-icon-item">
+                                          <a href="#" class="social-icon-link bi-instagram"></a>
+                                      </li>
+
+                                      <li class="social-icon-item">
+                                          <a href="#" class="social-icon-link bi-twitter"></a>
+                                      </li>
+
+                                      <li class="social-icon-item">
+                                          <a href="#" class="social-icon-link bi-whatsapp"></a>
+                                      </li>
+                                  </ul> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+  <!--  -->
+      <div class="col-lg-12 col-12 top-gap">
+          <div class="section-title-wrap mb-4">
+          <h4 class="section-title">episodes</h4>
+          </div>
+      </div>
+   
+      <div class="  episode  ">
+          <div class=" playlist-obj course-row">
+              <div class="episode-img">
+                  <div class="custom-block-icon-wrap">
+                      
+                        <a href="detail-page.html" class="image-container">
+                            
+                         
+                        <img src="https://img.freepik.com/free-psd/daily-podcast-banner-template_23-2149182935.jpg" class=" " alt="">
+                          <a href="#" class="custom-block-icon">
+                            <i class="bi-play-fill"></i>
+                        </a>
+                            
+                        </a>
+                      </div>
+
+                    <!-- <div class="mt-2">
+                        <a href="#" class="btn custom-btn">
+                            Subscribe
+                        </a>
+                    </div> -->
+                  </div>
+                  <div class="episode-text">
+                        <h5 class="mb-2">
+                            <a href="detail-page.html" class="playlist-title">
+                                Introduction to modern vintage with modern methods 
+                            </a>
+                        </h5>
+                        <div class="info-row">
+                          <small>Episode <span class="badge">1</span></small>
+                        <div class="custom-block-info">
+                          <div class="custom-block-top d-flex  ">
+                              <small class="me-">
+                                  <i class="bi-clock-fill custom-icon"></i>
+                                  5 Minutes
+                              </small>
+
+                          </div>  
+                      </div>
+                        </div>
+                        <!-- <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p> -->
+                    </div>
+             
+            </div>
+            <div class=" playlist-obj course-row">
+              <div class="episode-img">
+                  <div class="custom-block-icon-wrap">
+                      
+                        <a href="detail-page.html" class="image-container">
+                            
+                         
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD_G4LSesqctjW32psoIhI6k5vUfOix2ymUEMmcYiI7A&s" class=" " alt="">
+                          <a href="#" class="custom-block-icon">
+                            <i class="bi-play-fill"></i>
+                        </a>
+                            
+                        </a>
+                      </div>
+
+                    <!-- <div class="mt-2">
+                        <a href="#" class="btn custom-btn">
+                            Subscribe
+                        </a>
+                    </div> -->
+                  </div>
+                  <div class="episode-text">
+                        <h5 class="mb-2">
+                            <a href="detail-page.html" class="playlist-title">
+                              How To Mix Vintage And Modern Decor 
+                            </a>
+                        </h5>
+                        <div class="info-row">
+                          <small>Episode <span class="badge">2</span></small>
+                        <div class="custom-block-info">
+                          <div class="custom-block-top d-flex  ">
+                              <small class="me-">
+                                  <i class="bi-clock-fill custom-icon"></i>
+                                  13 Minutes
+                              </small>
+
+                          </div>  
+                      </div>
+                        </div>
+                        <!-- <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p> -->
+                    </div>
+             
+            </div>
+            <div class=" playlist-obj course-row">
+              <div class="episode-img">
+                  <div class="custom-block-icon-wrap">
+                      
+                        <a href="detail-page.html" class="image-container">
+                            
+                         
+                        <img src="https://www.decorilla.com/online-decorating/wp-content/uploads/2022/04/Modern-vintage-style-decor-in-an-office-design-Wanda-P.jpg" class=" " alt="">
+                          <a href="#" class="custom-block-icon">
+                            <i class="bi-play-fill"></i>
+                        </a>
+                            
+                        </a>
+                      </div>
+
+                    <!-- <div class="mt-2">
+                        <a href="#" class="btn custom-btn">
+                            Subscribe
+                        </a>
+                    </div> -->
+                  </div>
+                  <div class="episode-text">
+                        <h5 class="mb-2">
+                            <a href="detail-page.html" class="playlist-title">
+                              Retro Interior Design Tips for a Vintage-Style
+                            </a>
+                        </h5>
+                        <div class="info-row">
+                          <small>Episode <span class="badge">3</span></small>
+                        <div class="custom-block-info">
+                          <div class="custom-block-top d-flex  ">
+                              <small class="me-">
+                                  <i class="bi-clock-fill custom-icon"></i>
+                                  24 Minutes
+                              </small>
+
+                          </div>  
+                      </div>
+                        </div>
+                        <!-- <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p> -->
+                    </div>
+             
+            </div>
+          
+      </div>
+  
+  <!--  -->
+  </div>  
+  <div class="bottom" style="background-color: white; height: 250px;"></div>
+</div>
+
+
+
+</div>
+</div>
+</div>
