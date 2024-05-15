@@ -1,3 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    @font-face {
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/SouthRose.ttf");
+  font-family: SouthRose;
+}
+@font-face {
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/pirou.otf");
+  font-family: Metropolis;
+}
+ 
+
+ 
+ 
+
+/* ul {
+  list-style-type: none;
+} */
+
+.scene {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   
+  /* transition: transform 0.7s;
+  will-change: transform;
+  transform-origin: 50% 100%; */
+  z-index: 0;
+  display: none;
+}
+.page.active {
+  z-index: 3;
+  display: block;
+}
+/* .page.inactive {
+  transform: rotate(180deg);
+} */
+.page.removing h1 {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.page.down {
+  transition-delay: 0.3s;
+}
+.page.up h1 {
+  transition: all 0s !important;
+}
+.page--rotater {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 15rem;
+  font-size: 3rem; */
+}
+/* @media (max-width: 990px) {
+  .page--content {
+    padding: 10rem;
+  }
+} */
+.page--content h1 {
+  color: #fff;
+  font-size: 8rem;
+  font-family: SouthRose;
+  text-transform: uppercase;
+  transition: transform 0.3s, opacity 0.3s;
+  will-change: transform, opacity;
+}
+/* .page.page-1 {
+  z-index: 10;
+} */
+.page.page-1 .page--rotater {
+  background: #922D50;
+}
+/* .page.page-2 {
+  z-index: 9; }*/
+
+.page.page-2 .page--rotater {
+  background: #9D8420;
+}
+/* .page.page-3 {
+  z-index: 8;
+} */
+.page.page-3 .page--rotater {
+  background: #4B2840;
+}
+/* .page.page-4 {
+  z-index: 7;
+} */
+.page.page-4 .page--rotater {
+  background: #204442;
+}
+/* .page.page-5 {
+  z-index: 6;
+} */
+.page.page-5 .page--rotater {
+  background: #324A5F;
+}
 <div class="projects-section-header">
     <p>MY COURSES</p>
     <p class="time">December, 12</p>
