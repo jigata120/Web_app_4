@@ -16,6 +16,7 @@
  
  
 
+
 /* ul {
   list-style-type: none;
 } */
@@ -115,6 +116,241 @@
 .page.page-5 .page--rotater {
   background: #324A5F;
 }
+
+.play-lesson{
+   width: 6em;
+  font-family: inherit;
+  font-size: 14px;
+  background: royalblue;
+  color: white;
+  padding-left: 0%;
+  padding: 0.2em 0.4em;
+  /* padding-left: 0.9em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.play-lesson   span {
+  display: block;
+
+  text-align: center;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.play-lesson  i {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.play-lesson:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.play-lesson:hover i {
+  transform: translateX(1.2em) rotate(-10deg) scale(2.5);
+}
+
+.play-lesson:hover span {
+  transform: translateX(5em);
+}
+
+.play-lesson:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+.uk-grid-column-small  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+   
+   
+  --black: #618618;
+  --ch-black: #cefab2;
+  --eer-black: #216216;
+  --night-rider: #29a603;
+  --white: #282828;
+  --af-white: #cccccc;
+  --ch-white: #575757;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  
+}
+
+footer .demo {
+  position: absolute;
+  bottom: 10px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+footer .demo a {
+  text-align: center;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 100;
+  border-bottom: 1px solid var(--black);
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: -60px;
+  padding: 0;
+  z-index: 98;
+   
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+   
+  width: 25px;
+  height: 25px;
+  background-color: var(--night-rider);
+  transition: 0.2s;
+  text-align: center;
+}
+
+.circle:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.circle:hover {
+  cursor: pointer;
+  background-color: var(--night-rider);
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.circle .svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10.5px;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+
+.sub-circle {
+  z-index: 0;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: 0.3s;
+  transform: scale(0.5);
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.51);
+  border: dotted 3.12px #212121;
+  user-select: none;
+}
+
+.sub-circle label {
+  background-color: var(--eer-black);
+  display: block;
+  color: var(--eer-black);
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  transition: 0.5s;
+}
+
+.sub-circle label:hover {
+  cursor: pointer;
+  background-color: var(--eer-black);
+}
+
+.subs {
+  left: -20px;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  z-index: 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hidden-sub-trigger {
+  display: none;
+}
+
+.hidden-sub-trigger:checked ~ label {
+  background-color: var(--black);
+}
+
+.hidden-trigger {
+  display: none;
+}
+
+.hidden-trigger:checked ~ .circle {
+  transform: scale(0.75);
+  cursor: pointer;
+  background-color: var(--black);
+  box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.51);
+}
+
+.hidden-trigger:checked ~ .circle .svg {
+  transform: rotate(-315deg);
+}
+.prf{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bi-bookmark.active{
+  color: yellow;
+}
+.bi-heart.active{
+  color: red;
+}
+.player-sm{
+  display: none;
+}
+.player-sm.show{
+  display: block;
+  transform: 1s;
+  z-index: 7;
+}
+
+ 
+
+  </style>
+
+   
 <div class="projects-section-header">
     <p>MY COURSES</p>
     <p class="time">December, 12</p>
