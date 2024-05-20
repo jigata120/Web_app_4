@@ -3096,3 +3096,126 @@ a[href*="intent"] {
         </footer> 
 </body>
 </html>
+<script>
+
+  
+    document.addEventListener('DOMContentLoaded', function () {
+	var modeSwitch = document.querySelector('.mode-switch');
+	modeSwitch.addEventListener('click', function () { document.documentElement.classList.toggle('dark');
+	modeSwitch.classList.toggle('active');
+	});
+	var listView = document.querySelector('.list-view');
+	var gridView = document.querySelector('.grid-view');
+	var projectsList = document.querySelector('.project-boxes');
+	listView.addEventListener('click', function () {
+	gridView.classList.remove('active');
+	listView.classList.add('active');
+	projectsList.classList.remove('jsGridView');
+	projectsList.classList.add('jsListView');
+	});
+	gridView.addEventListener('click', function () {
+	gridView.classList.add('active');
+	listView.classList.remove('active');
+	projectsList.classList.remove('jsListView');
+	projectsList.classList.add('jsGridView');
+	});
+	document.querySelector('.messages-btn').addEventListener('click', function () {
+	document.querySelector('.messages-section').classList.add('show');
+	});
+	document.querySelector('.messages-close').addEventListener('click', function() {
+	document.querySelector('.messages-section').classList.remove('show');
+	});
+	});
+</script>
+<script  src="./script.js"></script>
+<script>
+  //fix default browser filter 
+setTimeout(() => {
+  var cardImages = document.querySelectorAll('.card_image img');
+
+        // Loop through each image element
+        cardImages.forEach(function(image) {
+            // Set the 'filter' style attribute to 'none'
+            image.style.filter = 'none';
+        });
+        console.log('fixed')
+}, 2000);
+</script>
+<script>document.addEventListener("DOMContentLoaded", function() {
+  
+  var curPage = 1
+      // startX, endX; // Declare startX here
+  
+  function pagination(page, direction) {
+    console.log(page+direction)
+    curPage = page;
+    var navBtns = document.querySelectorAll(".nav--btn");
+    navBtns.forEach(function(btn) {
+      btn.classList.remove("active1");
+    });
+    document.querySelector(".nav--btn-" + page).classList.add("active1");
+    var pages = document.querySelectorAll(".page");
+    pages.forEach(function(page) {
+      page.classList.remove("active");
+    });
+    document.querySelector(".page-" + page).classList.add("active");
+  }
+  
+  function navigateUp() {
+    if (curPage > 1) {
+      pagination(curPage - 1, "up");
+    }
+  }
+
+  function navigateDown() {
+    var navBtnsLength = document.querySelectorAll(".nav--btn").length;
+    if (curPage < navBtnsLength) {
+      pagination(curPage + 1, "down");
+    }
+  }
+  
+  const MenuBtms = document.querySelectorAll('.menu .menu__item')
+  MenuBtms.forEach(element => {
+    element.addEventListener("click", function(e) {
+      var target = e.target;
+      console.log(target.classList)
+      if (target.classList.contains("nav--btn") && target.classList.contains("active")) {
+        console.log('in')
+        var nextPage = +target.getAttribute("data-page"),
+            dir = (curPage < nextPage) ? "down" : "up";
+        pagination(nextPage, dir);
+      }else if (e.target.closest('.menu__item').classList.contains("nav--btn") && e.target.closest('.menu__item').classList.contains("active")){
+         target = e.target.closest('.menu__item')
+        console.log('in wt clsr')
+        var nextPage = +target.getAttribute("data-page"),
+            dir = (curPage < nextPage) ? "down" : "up";
+        pagination(nextPage, dir);
+      }
+    });
+  });
+ 
+  // document.addEventListener('mousedown', function(e) {
+    //   startX = e.pageX || e.touches[0].pageX;
+    // });
+  
+    // document.addEventListener('mouseup', function(e) {
+    //   endX = e.pageX || e.changedTouches[0].pageX;
+      
+    //   var deltaX = endX - startX;
+    //   if (deltaX > 50) { // Slide right
+    //     navigateUp();
+    //   } else if (deltaX < -50) { // Slide left
+    //     navigateDown();
+    //   }
+    // });
+    
+    // document.addEventListener("mousewheel", function(e) {
+    //   if (e.wheelDelta > 0 || e.detail < 0) {
+    //     navigateUp();
+    //   } else { 
+    //     navigateDown();
+    //   }
+    // });
+    
+});
+</script>
