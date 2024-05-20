@@ -3033,3 +3033,66 @@ a[href*="intent"] {
               </clipPath>
             </svg>
           </div>
+          <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='//cdn.jsdelivr.net/velocity/1.2.0/velocity.min.js'></script><script  src="./script.js"></script>
+        
+            <script src="/js/main.js" crossorigin=""></script>  
+            <script>
+                "use strict"; 
+                function closeBackdrop() {
+                    const Backdrop = document.querySelectorAll('.offcanvas-backdrop.show');
+                    console.log(Backdrop);
+                    Backdrop.forEach(element => {
+                      element.click();
+                    });
+}
+                const body = document.body;
+                const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
+                const menu = body.querySelector(".menu");
+                const menuItems = menu.querySelectorAll(".menu__item");
+                const menuBorder = menu.querySelector(".menu__border");
+                let activeItem = menu.querySelector(".active");
+                
+                function clickItem(item, index) {
+                
+                    menu.style.removeProperty("--timeOut");
+                    
+                    if (activeItem == item) return;
+                    
+                    if (activeItem) {
+                        activeItem.classList.remove("active");
+                    }
+                
+                    
+                    item.classList.add("active");
+                    body.style.backgroundColor = bgColorsBody[index];
+                    activeItem = item;
+                    offsetMenuBorder(activeItem, menuBorder);
+                    
+                    
+                }
+                
+                function offsetMenuBorder(element, menuBorder) {
+                
+                    const offsetActiveItem = element.getBoundingClientRect();
+                    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth  - offsetActiveItem.width) / 2) +  "px";
+                    menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+                
+                }
+                
+                offsetMenuBorder(activeItem, menuBorder);
+                
+                menuItems.forEach((item, index) => {
+                
+                    item.addEventListener("click", () => clickItem(item, index));
+                    
+                })
+                
+                window.addEventListener("resize", () => {
+                    offsetMenuBorder(activeItem, menuBorder);
+                    menu.style.setProperty("--timeOut", "none");
+                });
+            </script>  
+        </footer> 
+</body>
+</html>
