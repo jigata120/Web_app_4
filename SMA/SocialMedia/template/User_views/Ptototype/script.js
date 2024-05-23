@@ -165,3 +165,102 @@ function createCard(time,title,message) {
 
 
 
+function addPin(pinnedVideoId, pinTitle, pinMessage, pinTime) {
+// Check if the pinnedVideoId exists in pins
+if (!pins.hasOwnProperty(pinnedVideoId)) {
+	pins[pinnedVideoId] = {
+		'title': "",
+		'pins': []
+	};
+}
+
+// Add the new pin object
+pins[pinnedVideoId].pins.push({
+	'time': pinTime,
+	'title': pinTitle,
+	'message': pinMessage
+});
+
+ 
+}
+
+function handleAddPin(){
+pinnedVideoId = Object.keys(videos)[currentlyLaunchedVideo]
+pinTitle = titleInputPin.value
+pinMessage = messageTextareaPin.value
+pinTime = timeNow2
+addPin(pinnedVideoId,pinTitle,pinMessage,pinTime)
+console.log(pins)
+loadPins( pinnedVideoId)
+closeTimeline.click()
+openTimeline.click()
+}
+
+const modalPinTime = document.querySelector('#exampleModalLabel2 span');
+const titleInputPin = document.getElementById('recipient-name2');
+const messageTextareaPin = document.getElementById('message-text2');
+function handleModalPinClose(){
+if (player){
+  if (player.getPlayerState() != YT.PlayerState.PLAYING) {
+	  playBtn.click();
+  } 
+}
+titleInputPin.value=''
+messageTextareaPin.value=''
+}
+
+function handlePin(){
+modalPinTime.textContent = formatTime(timeNow2);
+if (player){
+  if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+	playBtn.click();
+  }
+}
+// Object.keys(videos)[currentlyLaunchedVideo]
+}
+
+let player;
+let playerReady = false;
+
+function changeVideoQuality(quality) {
+if (player) {
+	player.setPlaybackQuality(quality);
+}
+}
+
+// Get all radio inputs
+// const qualityRadios = document.querySelectorAll('quality input[name="quality-radio"]');
+
+// // Add event listener to each radio input
+// console.log(  `objs${qualityRadios.length}`)
+// qualityRadios.forEach(function(radio) {
+//     radio.addEventListener('change', function() {
+//         if (this.checked) {
+//             const quality = this.value;
+//             changeVideoQuality(quality);
+//         }
+//     });
+// });
+console.clear();
+function changeStartBtnSmState(){
+const playBtnIsActive = playBtn.classList.contains('pause');
+const playBtnSmIsActive = playBtnSm.classList.contains('active');
+
+if (playBtnSm!==playBtn){
+playSm()
+console.log(playBtnIsActive)
+console.log(playBtnSmIsActive)
+
+
+console.log('changing the sm state')
+
+}
+}
+const playBtnSm = document.getElementById('play-sm');
+const controlPanel = document.getElementById('control-panel');
+const infoBar = document.getElementById('info');
+const summeryBtn = document.getElementById('summary');
+const TrendHarthBtns = document.querySelectorAll('.bi-heart');
+const TrendBookmarkBtns = document.querySelectorAll('.bi-bookmark');
+
+
