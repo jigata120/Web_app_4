@@ -362,4 +362,88 @@ updatePlayPauseButton(); // Initialize play/pause button
 player.setVolume(50); // Set the initial volume to 100%
 }
 
+// document.getElementById('volumeControl').addEventListener('input', function() {
+//   let volume = this.value;
+//   player.setVolume(volume);
+// });
+// volume
+
+
+// button state
+function onPlayerReady(event) {
+playerReady = true;
+player.playVideo();
+	 // Initialize the button state based on the player state
+updatePlayPauseButton();
+}
+
+function onPlayerStateChange(event) {
+updatePlayPauseButton();
+if (event.data === YT.PlayerState.ENDED) {
+// Video has ended
+console.log(isRepeating)
+if(isRepeating){
+	player.seekTo(0);
+}else{
+	console.log("Video has ended");
+}
+summeryBtn.click()
+
  
+// You can perform any actions here, such as loading a new video or displaying a message
+}
+}
+// button state
+
+
+//upgrade button visual state
+// function updatePlayPauseButton() {
+//   let button = document.getElementById('playPauseButton');
+//   if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+//     button.classList.remove('play');
+//     button.classList.add('pause');
+//   } else {
+//     button.classList.remove('pause');
+//     button.classList.add('play');
+//   }
+//}
+// let button = document.querySelector('.play');
+function updatePlayPauseButton() {
+
+if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+// music.play();
+	playBtn.className = 'pause'
+	playBtn.innerHTML = '<i class="material-icons">pause</i>'
+	controlPanel.classList.add('active')
+	infoBar.classList.add('active')
+
+	
+} else {
+	// music.pause();
+	playBtn.className = 'play'
+	playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+	controlPanel.classList.remove('active')
+	infoBar.classList.remove('active')
+  }
+
+}
+// upgrade button visual state
+
+//#######################################################################################
+//#######################################################################################
+// player
+let music = document.querySelector('.music-element')
+let playBtn = document.querySelector('.playBtn')
+let seekbar = document.querySelector('#seekbar')
+let seekbarSm = document.querySelector('#seekbarSm')
+let currentTimeElement = document.querySelector('.current-time')
+let duration = document.querySelector('.duration')
+
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+// like
+let favIcon = document.querySelector('.favorite')
+function handleFavorite() {
+favIcon.classList.toggle('active');
+} 
