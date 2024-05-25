@@ -446,4 +446,103 @@ const nextBtn = document.getElementById('nextBtn');
 let favIcon = document.querySelector('.favorite')
 function handleFavorite() {
 favIcon.classList.toggle('active');
-} 
+}
+// settings
+let settingsIcon = document.querySelector('.settings')
+let speedDivEl = document.querySelector('.speed')
+let QualityDivEl = document.querySelector('.quality')
+let skipsDivEl = document.querySelector('.skips')
+let subsDivEl = document.querySelector('.subs')
+
+
+
+const playerOffcanvas = document.getElementById('offcanvasBottom')
+function handleSettings() {
+	speedDivEl.classList.toggle('active')
+	QualityDivEl.classList.toggle('active')
+
+	settingsIcon.classList.toggle('active');
+	skipsDivEl.classList.toggle('active');
+	subsDivEl.classList.toggle('active');
+	if (playerOffcanvas.style.height == '70vh'){
+		playerOffcanvas.style.height = '90vh'
+	}else{
+		playerOffcanvas.style.height = '70vh'
+	}
+	
+
+}
+//subs
+function HandleSubs(req) {
+if (player) {
+if (req) {
+  // Turn subtitles on
+  console.log('on')
+  player.setOption('captions', 'track', true);
+} else {
+  // Turn subtitles off
+  console.log('off')
+
+  player.setOption('captions', 'track', false);
+}
+}
+}
+
+// repeat
+let isRepeating = false;
+let repIcon = document.querySelector('.repeat')
+function handleRepeat() {
+isRepeating = !isRepeating; 
+if (repIcon.classList.contains('active')) {
+   // isRepeating=true 
+	repIcon.classList.toggle('active') 
+}
+else {
+	repIcon.classList.toggle('active')
+}
+}
+
+// volume
+let volIcon = document.querySelector('.volume')
+let volBox = document.querySelector('.volume-box')
+let volumeRange = document.querySelector('.volume-range')
+let volumeDown = document.querySelector('.volume-down')
+let volumeUp = document.querySelector('.volume-up')
+
+function handleVolume() {
+volIcon.classList.toggle('active')
+volBox.classList.toggle('active')
+}
+
+volumeDown.addEventListener('click', handleVolumeDown);
+volumeUp.addEventListener('click', handleVolumeUp);
+
+function handleVolumeDown() {
+volumeRange.value = Number(volumeRange.value) - 20
+player.setVolume(volumeRange.value)
+}
+function handleVolumeUp() {
+volumeRange.value = Number(volumeRange.value) + 20
+player.setVolume(volumeRange.value)
+}
+volumeRange.addEventListener('input', function() {
+let volume = this.value;
+player.setVolume(volume);
+});
+//#######################################################################################
+//#######################################################################################
+
+// change the state by click
+document.querySelector('.playBtn').addEventListener('click', function() {
+if(player){
+let state = player.getPlayerState();
+if (state == YT.PlayerState.PLAYING) {
+  
+  player.pauseVideo();
+} else {
+  player.playVideo();
+}
+
+}
+});
+ 
