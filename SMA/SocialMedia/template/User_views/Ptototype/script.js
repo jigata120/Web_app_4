@@ -264,3 +264,102 @@ const TrendHarthBtns = document.querySelectorAll('.bi-heart');
 const TrendBookmarkBtns = document.querySelectorAll('.bi-bookmark');
 
 
+TrendHarthBtns.forEach(element => {
+	element.addEventListener('click',()=>{
+		element.classList.toggle('active');
+	})
+});
+ 
+TrendBookmarkBtns.forEach(element => {
+	element.addEventListener('click',()=>{
+		element.classList.toggle('active');
+	})
+});
+ 
+
+
+// const prevBtn =document.getElementById('prevBnt');
+// const nextBtn =document.getElementById('nextBnt');
+function playerSmPrev(){
+prevBtn.click()
+}
+function playerSmNext(){
+nextBtn.click()
+}
+
+
+function playSm() {
+Array.from(controlPanel.classList).find(function(element) {
+return element !== "active" ? controlPanel.classList.add('active') : controlPanel.classList.remove('active');
+});
+
+Array.from(infoBar.classList).find(function(element) {
+return element !== "active" ? infoBar.classList.add('active') : infoBar.classList.remove('active');
+});
+}
+
+function playbyTheMainBtn() {
+playBtn.click();
+
+// Add any additional functionality here
+}
+
+playBtnSm.addEventListener('click',playbyTheMainBtn);
+
+
+// class musicPlayer {
+// 	constructor() {
+// 		this.play = this.play.bind(this);
+// 		this.playBtnSm = document.getElementById('play-sm');
+// 		this.playBtnSm.addEventListener('click', this.play);
+// 		this.controlPanel = document.getElementById('control-panel');
+// 		this.infoBar = document.getElementById('info');
+// 	}
+//    playSm(params) {
+//     let controlPanelObj = this.controlPanel,
+// 		infoBarObj = this.infoBar
+// 		Array.from(controlPanelObj.classList).find(function(element){
+// 					return element !== "active" ? controlPanelObj.classList.add('active') : 		controlPanelObj.classList.remove('active');
+// 			});
+	
+// 		Array.from(infoBarObj.classList).find(function(element){
+// 					return element !== "active" ? infoBarObj.classList.add('active') : 		infoBarObj.classList.remove('active');
+// 			});
+//   }
+// 	play() {
+//     playBtn.click()
+// 		this.playSm()
+//       // if (){
+
+//       // }
+// 	}
+// }
+
+// const newMusicplayer = new musicPlayer();
+
+
+
+
+//display
+// document.querySelector('#display').addEventListener('click', function() {
+//   let playerElement = document.querySelector(".player #player");
+
+
+//   if (playerElement.style.display === "none") {
+//     playerElement.style.display = "block";
+// } else {
+//   playerElement.style.display = "none";
+// }
+// });
+
+function displayPlayer(){
+
+}
+//volume
+function onPlayerReady(event) {
+playerReady = true;
+updatePlayPauseButton(); // Initialize play/pause button
+player.setVolume(50); // Set the initial volume to 100%
+}
+
+ 
