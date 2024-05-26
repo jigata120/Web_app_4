@@ -545,4 +545,118 @@ if (state == YT.PlayerState.PLAYING) {
 
 }
 });
- 
+// change the state by click
+
+
+//search using form
+// document.getElementById('searchButton').addEventListener('click', function(event) {
+// event.preventDefault(); // Prevent default form submission
+// let query = ''//document.getElementById('searchQuery').value;
+// searchYouTubeVideos(query);
+// });
+//search using form
+
+
+// search and launch the video
+// async function searchYouTubeVideos(query) {
+//   await $.ajax({
+//     url: 'https://www.googleapis.com/youtube/v3/search',
+//     type: 'GET',
+//     dataType: 'json',
+//     data: {
+//       part: 'snippet',
+//       q: query,
+//       type: 'video',// type: 'playlist',
+//       maxResults: 1,
+//       key: 'AIzaSyBybF0pQaNpA6oDl3_MTtgZCSZ4TkKN2pE' // Replace with your actual API key
+//     },
+//     success: function(response) {
+//       if (response.items.length > 0) {
+//         let videoId = response.items[0].id.videoId;
+//         console.log(videoId);
+//         loadVideoById(videoId);
+//         // onYouTubeIframeAPIReady(videoId)
+
+//         // player.loadVideoById(videoId);
+//       }
+//     },
+//     error: function(response) {
+//       loadVideoById('nmrgnA9R1E4')
+
+//       console.error("Search API Request Failed", response);
+//     }
+//   });
+// }
+//search and launch the video
+let videos = {
+'7_LPdttKXPc':"How the Internet Works in 5 Minutes",
+'j9QmMEWmcfo':"SSL, TLS, HTTPS Explained",
+'htbY9-yggB0':"What Is Web Hosting? Explained",
+'Fdnlz4EEP08':"Shaving Tips: How to Shave Your Face",
+'y8jPXe4Zu_w':"Stop lasting life by Kevin Hart",
+'8Lmp1Ncaa7Y':"Top 10 Interior Design Trends You Need To Know "
+
+};
+
+// document.getElementById('myList').addEventListener('click', function(event) {
+//   var clickedElement = event.target; // Get the clicked element
+//   var clickedIndex = Array.from(clickedElement.parentNode.children).indexOf(clickedElement);
+
+//   if (clickedIndex === 1) {
+//     console.log('The second item was clicked.');
+//     // Your code to handle the click on the second item
+//   }
+// });
+let currentlyLaunchedVideo = 1
+function launchVideoIfThere(turn){
+loadVideoById(Object.keys(videos)[currentlyLaunchedVideo + turn])
+currentlyLaunchedVideo = currentlyLaunchedVideo + turn
+
+}
+function launchInitialVideo(index){
+loadVideoById(Object.keys(videos)[index])
+console.log(currentlyLaunchedVideo)
+}
+
+
+
+nextBtn.addEventListener('click',()=>{
+if (Object.keys(videos)[currentlyLaunchedVideo + 1]) {
+ launchVideoIfThere(1)
+} 
+})
+
+prevBtn.addEventListener('click',()=>{
+if (Object.keys(videos)[currentlyLaunchedVideo - 1]) {
+ launchVideoIfThere(-1)
+} 
+})
+
+function searchYouTubeVideos(query){
+launchInitialVideo(currentlyLaunchedVideo)
+
+}
+function launchVideo(videoToLaunch){
+loadVideoById(videoToLaunch) 
+} 
+
+let playerHeight;
+let playerWidth 
+// video iframe launch
+function onYouTubeIframeAPIReady(videoId){
+let playerElement = document.getElementById('player');
+player = new YT.Player('player', {
+height: playerHeight,
+width: playerWidth,  
+videoId: videoId,//'vlPgD1y5BBk'
+ // Start with an empty video ID or a default one
+//  playerVars: {
+//   listType: 'playlist',
+//   list: playlistId
+// },
+events: {
+  'onReady': onPlayerReady,
+  'onStateChange': onPlayerStateChange
+}
+});
+}
