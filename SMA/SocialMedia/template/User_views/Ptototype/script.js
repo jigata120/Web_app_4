@@ -660,3 +660,90 @@ events: {
 }
 });
 }
+// video iframe launch
+const PlayerSmImg = document.querySelector('.album-art::before')
+const playerTitleEl = document.querySelector('#offcanvasBottomLabel')
+function loadVideoById(videoId) {
+	PlayerSm.classList.add('show')
+// If player is not initialized, initialize it with the video ID
+if (!player) {
+onYouTubeIframeAPIReady(videoId);
+} else {
+// If player is already initialized, load the new video
+player.loadVideoById(videoId);
+}
+	playerTitleEl.textContent=videos[videoId]
+	PlayerSmTitle.textContent = videos[videoId]
+	const PlayerSmImg = document.querySelector('.album-art')
+	const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+	PlayerSmImg.style.backgroundImage = `url('${thumbnailUrl}')`;
+	console.log(thumbnailUrl)
+
+
+}
+//offcanvas BOOTSTRAP
+document.querySelectorAll('[data-bs-toggle="offcanvas"]').forEach(function (button) {
+button.addEventListener('click', function () {
+  let targetId = this.getAttribute('data-bs-target');
+  let targetOffcanvas = document.querySelector(targetId);
+  if (targetOffcanvas) {
+	let offcanvas = new bootstrap.Offcanvas(targetOffcanvas);
+	offcanvas.toggle();
+  }
+});
+});
+// dinamic screen lenght
+
+function calculateHeight(width) {
+return (width / 16) * 9; // 16:9-ratio
+}
+
+let videoDIV = document.querySelector('.player')
+let windowWidth =  videoDIV.clientWidth  ;
+
+console.log("Window width:", windowWidth);
+
+window.addEventListener('resize', function() {
+videoDIV = document.querySelector('.player')
+windowWidth =  videoDIV.clientWidth - 20 ;
+setHeight()
+});
+
+function setHeight() {
+const content = document.getElementById('player');
+const width = windowWidth;
+const height = calculateHeight(width);
+console.log(width , height)
+content.style.width = width + 'px';
+content.style.height = height + 'px';
+playerWidth = width
+playerHeight = height
+}
+setHeight();
+// dinamic screen lenght
+
+let skipSeconds = 10;//default
+// Function to skip (n) seconds forward
+function skipForward() {
+if (player && player.getCurrentTime) {
+let currentTime = player.getCurrentTime();
+player.seekTo(currentTime + skipSeconds, true); // Adding (n) seconds to current time
+}
+}
+function changeSkipSeconds(seconds){
+skipSeconds = seconds
+}
+// Function to skip (n) seconds backward
+function skipBackward() {
+if (player && player.getCurrentTime) {
+let currentTime = player.getCurrentTime();
+player.seekTo(currentTime - skipSeconds, true); // Subtracting (n) seconds from current time
+}
+}
+
+// Example of button click event listeners
+// document.getElementById('skipForwardButton').addEventListener('click', skipForward);
+// document.getElementById('skipBackwardButton').addEventListener('click', skipBackward);
+
+
+// ###############################
