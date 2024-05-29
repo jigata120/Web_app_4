@@ -1,0 +1,155 @@
+
+
+#chevron {
+  align-self: center;
+  justify-self: center;
+  font-size: 40px; /* Adjust the font size to make the icon bigger */
+  height: 100%;
+  z-index: 2;
+}
+.offcanvas-body{
+  padding-top: 0px;
+}
+.offcanvas-header2{
+  display: flex;
+  padding: 10px;
+  justify-content:center;
+  align-items: center;
+}
+.offcanvas-title{
+  position: absolute;
+  left: 20px; 
+}
+.offcanvas{
+  border-radius: 10px;
+}
+
+/* timelinePin pins */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Mulish", sans-serif; */
+}
+
+/* body {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  background: #ecf1f5;
+  transform: scale(0.8) translateY(-50px);
+} */
+
+.cardTop {
+  width: 497px;
+  height: 284px;
+  background: #FAC24F;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+ 
+.timelinePin {
+  width: 355px;
+  height: 636px;
+  background: #ECF1F524;
+  mix-blend-mode: normal;
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  position: absolute;
+  left: 3vw;
+  margin: 0 auto; 
+  top: 5%; /* Position from the top edge */
+  left: 50%; /* Position from the left edge */
+  transform: translate(-50%, 9%); /* Move the element back by half of its own width and height */
+
+  box-shadow: 0px 20px 53px -30px rgba(95, 102, 173, 0.566816);
+  border-radius: 10px;
+}
+.timelinePin h3 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #FFFFFF;
+   
+  margin-top: 40px;
+}
+.timelinePin label {
+  display: block;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: center;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+.timelinePin .box {
+  width: 100%;
+  height: 509px;
+  background: #fbfcfd;
+  margin-top: 99.5px;
+}
+.timelinePin .box .containerPins {
+  width: 100%;
+  height: 357px;
+  overflow: auto;
+  display: flex;
+}
+.timelinePin .box .containerPins .lines {
+  margin-left: 40px;
+  margin-top: 6px;
+  margin-top: 50px;
+
+}
+.timelinePin .box .containerPins .lines .dot {
+  width: 14px;
+  height: 14px;
+  background: #D1D6E6;
+  border-radius: 7px;
+}
+.timelinePin .box .containerPins .lines .line {
+  height: 87px;
+  width: 2px;
+  background: #D1D6E6;
+  margin-left: 5.3px;
+}
+.timelinePin .box .containerPins .cardsPin {
+  margin-left: 12px;
+  margin-top: 50px;
+  transform: translateY(-50px);
+}
+.timelinePin .box .containerPins .cardsPin .cardPin {
+  width: 249px;
+  height: 93px;
+  padding-top: 25px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 #eeeeee40;
+  border-radius: 10px;
+  box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.0944602);
+  margin-bottom: 10px;
+}
+
+.timelinePin .box .containerPins .cardsPin .card.mid {
+  height: 71px;
+}
+
+.timelinePin .box .containerPins .cardsPin .cardPin h4 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  color: #2B2862;
+}
