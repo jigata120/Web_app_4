@@ -747,3 +747,128 @@ player.seekTo(currentTime - skipSeconds, true); // Subtracting (n) seconds from 
 
 
 // ###############################
+
+// Function to toggle fullscreen mode
+// Example of button click event listener
+document.querySelector('.fullScreenButton').addEventListener('click', toggleFullScreen);
+function toggleFullScreen() {
+let playerElement = document.getElementById('player');
+
+if (playerElement.requestFullscreen) {
+if (document.fullscreenElement) {
+  document.exitFullscreen();
+} else {
+  playerElement.requestFullscreen();
+}
+} else if (playerElement.mozRequestFullScreen) { /* Firefox */
+if (document.mozFullScreenElement) {
+  document.mozCancelFullScreen();
+} else {
+  playerElement.mozRequestFullScreen();
+}
+} else if (playerElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+if (document.webkitFullscreenElement) {
+  document.webkitExitFullscreen();
+} else {
+  playerElement.webkitRequestFullscreen();
+}
+} else if (playerElement.msRequestFullscreen) { /* IE/Edge */
+if (document.msFullscreenElement) {
+  document.msExitFullscreen();
+} else {
+  playerElement.msRequestFullscreen();
+}
+}
+}
+// Function to toggle fullscreen mode
+
+// ###############################
+
+let newSpeed = 1;
+// Function to increase playback speed
+function increaseSpeed() {
+if (player ) {
+let currentSpeed = player.getPlaybackRate();
+newSpeed = currentSpeed + 0.25; // Increase playback speed by 0.25
+player.setPlaybackRate(newSpeed);
+}
+console.log(newSpeed) ;
+displayElement = document.getElementById('speed-display');
+displayElement.textContent = newSpeed;
+}
+
+// Function to decrease playback speed
+function decreaseSpeed() {
+if (player ) {
+let currentSpeed = player.getPlaybackRate();
+newSpeed = Math.max(0.25, currentSpeed - 0.25); // Decrease playback speed by 0.25, with a minimum of 0.25
+player.setPlaybackRate(newSpeed);
+}
+
+console.log(newSpeed) ;
+displayElement = document.getElementById('speed-display');
+displayElement.textContent = newSpeed;
+}
+
+// Example of button click event listeners
+document.getElementById('increaseSpeedButton').addEventListener('click', increaseSpeed);
+document.getElementById('decreaseSpeedButton').addEventListener('click', decreaseSpeed);
+//timeline
+
+function formatTime(time) {
+let minutes = Math.floor(time / 60);
+let seconds = Math.ceil(time % 60);
+return minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+}
+let timeNow2;
+// Function to update current and total time
+function updateTimeline() {
+if (player) {
+let timeNow = player.getCurrentTime();
+let totalTime = player.getDuration();
+
+document.querySelector('.current-time').textContent = formatTime(timeNow);
+document.querySelector('.duration').textContent = formatTime(totalTime);
+
+// Calculate the progress as a percentage
+let progress = (timeNow / totalTime) * 100;
+// console.log(progress)
+
+// Update the width of the progress bar
+// let progressElement = document.getElementById('progress');
+if (seekbar) {
+	seekbar.value = progress;
+	seekbarSm.value=progress;
+}
+timeNow2 = timeNow
+return timeNow2  
+}
+// console.clear();
+}
+seekbar.addEventListener('input', function() {
+let totalTime = player.getDuration();
+let timeToChange = (totalTime*this.value)/100;
+console.log(timeToChange)
+player.seekTo(timeToChange, true);
+// player.pauseVideo()
+});
+
+// Call the updateTimeline function periodically to update the timeline
+setInterval(updateTimeline, 1000);
+// Update every second
+//timeline
+
+function pinMoment(){
+if (player){
+
+}
+}
+// onYouTubeIframeAPIReady('nmrgnA9R1E4')
+
+
+
+
+//PINS
+
+
+
