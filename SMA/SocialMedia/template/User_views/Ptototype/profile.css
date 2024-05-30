@@ -148,3 +148,141 @@
   left: -6%;
   background: rgba(255,255,255,0.04);
 }
+
+.profile-page .content__avatar {
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, 50%);
+  background: #8f6ed5 url("https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg") center center no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+}
+.profile-page .content__avatar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+}
+@media (max-width: 990px) {
+  .profile-page .content__avatar {
+    width: 11rem;
+    height: 11rem;
+    border: 0.3rem solid #fff;
+    box-shadow: none;
+  }
+}
+.profile-page .content__actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+@media (max-width: 990px) {
+  .profile-page .content__actions {
+    padding: 0.8rem 1rem;
+  }
+  
+
+}
+.profile-page .content__actions a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  padding: 0.2rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+@media (max-width: 990px) {
+  .profile-page .content__actions a {
+    padding: 0.rem;
+  }
+}
+@media (max-width: 990px) {
+  .profile-page .content__actions a span {
+    display: none;
+  }
+}
+.profile-page .content__actions a svg {
+  width: 2rem;
+  margin-right: 0.4rem;
+}
+@media (max-width: 990px) {
+  .profile-page .content__actions a svg {
+    margin: 0;
+  }
+}
+.profile-page .content__actions a svg path:last-child {
+  opacity: 0.5;
+}
+.profile-page .content__actions a:first-child {
+  color: #ff4086;
+}
+.theme-orange .profile-page .content__actions a:first-child {
+  color: #ff4086;
+}
+.theme-purple .profile-page .content__actions a:first-child {
+  color: #8700ff;
+}
+.theme-green .profile-page .content__actions a:first-child {
+  color: #1dcc45;
+}
+.theme-blue .profile-page .content__actions a:first-child {
+  color: #0098f0;
+}
+.profile-page .content__actions a:last-child {
+  color: #d782d9;
+}
+.theme-orange .profile-page .content__actions a:last-child {
+  color: #fd8d76;
+}
+.theme-purple .profile-page .content__actions a:last-child {
+  color: #f000ff;
+}
+.theme-green .profile-page .content__actions a:last-child {
+  color: #42b883;
+}
+.theme-blue .profile-page .content__actions a:last-child {
+  color: #00f2c3;
+}
+.profile-page .content__actions a:hover:first-child {
+  background: #1d8cf8;
+  color: #fff;
+}
+.theme-orange .profile-page .content__actions a:hover:first-child {
+  background: #ff4086;
+}
+.theme-purple .profile-page .content__actions a:hover:first-child {
+  background: #8700ff;
+}
+.theme-green .profile-page .content__actions a:hover:first-child {
+  background: #1dcc45;
+}
+.theme-blue .profile-page .content__actions a:hover:first-child {
+  background: #0098f0;
+}
+.profile-page .content__actions a:hover:last-child {
+  background: #1d8cf8;
+  color: #fff;
+}
+.theme-orange .profile-page .content__actions a:hover:last-child {
+  background: #fd8d76;
+}
+.theme-purple .profile-page .content__actions a:hover:last-child {
+  background: #f000ff;
+}
+.theme-green .profile-page .content__actions a:hover:last-child {
+  background: #42b883;
+}
+.theme-blue .profile-page .content__actions a:hover:last-child {
+  background: #00f2c3;
+}
