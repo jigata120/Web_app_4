@@ -148,7 +148,6 @@
   left: -6%;
   background: rgba(255,255,255,0.04);
 }
-
 .profile-page .content__avatar {
   width: 12rem;
   height: 12rem;
@@ -286,7 +285,6 @@
 .theme-blue .profile-page .content__actions a:hover:last-child {
   background: #00f2c3;
 }
-
 .profile-page .content__title {
   margin-top: 4.5rem;
   text-align: center;
@@ -449,4 +447,109 @@
 }
 .theme-blue .profile-page .bg div {
   background: linear-gradient(150deg, #0098f0 20%, #00f2c3 100%);
+}
+.profile-page .bg span:nth-child(1) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(2) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(3) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(4) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(5) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(6) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(7) {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  animation: floating 34s infinite;
+}
+.profile-page .bg span:nth-child(1) {
+  width: 11rem;
+  height: 11rem;
+  top: 30%;
+  left: 16%;
+  background: rgba(255,255,255,0.05);
+  animation-duration: 34s;
+}
+.profile-page .bg span:nth-child(2) {
+  width: 8rem;
+  height: 8rem;
+  top: 18%;
+  left: 1%;
+  background: rgba(255,255,255,0.12);
+  animation-duration: 40s;
+}
+.profile-page .bg span:nth-child(3) {
+  width: 8rem;
+  height: 8rem;
+  top: 34%;
+  right: 10%;
+  background: rgba(255,255,255,0.1);
+  animation-duration: 38s;
+}
+.profile-page .bg span:nth-child(4) {
+  width: 4rem;
+  height: 4rem;
+  top: 34%;
+  right: 3%;
+  background: rgba(255,255,255,0.2);
+  animation-duration: 34s;
+}
+.profile-page .bg span:nth-child(5) {
+  width: 12rem;
+  height: 12rem;
+  top: 42%;
+  right: 28%;
+  background: rgba(255,255,255,0.1);
+  animation-duration: 40s;
+}
+.profile-page .bg span:nth-child(6) {
+  width: 8rem;
+  height: 8rem;
+  top: 72%;
+  left: 6%;
+  background: rgba(255,255,255,0.05);
+  animation-duration: 38s;
+}
+.profile-page .bg span:nth-child(7) {
+  width: 4rem;
+  height: 4rem;
+  top: 82%;
+  right: 8%;
+  background: rgba(255,255,255,0.05);
+  animation-duration: 34s;
 }
