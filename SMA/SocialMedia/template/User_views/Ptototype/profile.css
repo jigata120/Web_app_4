@@ -553,3 +553,94 @@
   background: rgba(255,255,255,0.05);
   animation-duration: 34s;
 }
+.theme-switcher-button {
+  position: fixed;
+  top: calc(50% - 3.6rem);
+  right: 0;
+  z-index: 2;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  font-size: inherit;
+  color: #fd7686;
+  cursor: pointer;
+}
+.theme-orange .theme-switcher-button {
+  color: #fd7686;
+}
+.theme-purple .theme-switcher-button {
+  color: #80f;
+}
+.theme-green .theme-switcher-button {
+  color: #42b883;
+}
+.theme-blue .theme-switcher-button {
+  color: #1d8cf8;
+}
+.theme-switcher-button svg {
+  width: 1.1rem;
+}
+.theme-switcher-wrapper {
+  width: 200px;
+  position: fixed;
+  top: calc(50% - 5rem);
+  right: 5rem;
+  z-index: 2;
+  padding: 1.5rem 0;
+  background: linear-gradient(#222a42, #1d253b);
+  box-shadow: 0 10px 50px 0 rgba(0,0,0,0.2);
+  border-radius: 0.25rem;
+  opacity: 0;
+  text-align: center;
+  font-size: 1rem;
+  color: inherit;
+  visibility: hidden;
+  transform: translateY(-15%) translateZ(0);
+  transform-origin: 0 0;
+  transition: transform 0.15s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.theme-switcher-wrapper.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 1px, 0);
+}
+.theme-switcher-wrapper span {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
+  cursor: default;
+}
+.theme-switcher-wrapper ul {
+  margin-top: 0.8rem;
+  list-style-type: none;
+  font-size: 0;
+}
+.theme-switcher-wrapper li {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0.2rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+.theme-switcher-wrapper li em {
+  display: block;
+  border-radius: 1rem;
+}
+.theme-switcher-wrapper [data-theme] {
+  width: 20px;
+  height: 20px;
+}
+.theme-switcher-wrapper [data-theme="orange"] {
+  background: #ff4086;
+}
+.theme-switcher-wrapper [data-theme="purple"] {
+  background: #80f;
+}
+.theme-switcher-wrapper [data-theme="green"] {
+  background: #42b883;
+}
+.theme-switcher-wrapper [data-theme="blue"] {
+  background: #1d8cf8;
+}
