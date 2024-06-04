@@ -662,3 +662,52 @@ flex-shrink: 0;
 padding: 6px 16px;
 font-weight: 700;
 }
+.mode-switch.active .moon {
+fill: var(--main-color);
+}
+.messages-btn {
+border-radius: 4px 0 0 4px;
+position: absolute;
+right: 0;
+top: 58px;
+background-color: var(--message-btn);
+border: none;
+color: var(--main-color);
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 4px;
+display: none;
+}
+@media screen and (max-width: 980px) {
+.project-boxes.jsGridView .project-box-wrapper {
+width: 50%;
+}
+.status-number, .status-type {
+font-size: 14px;
+}
+.status-type:after {
+width: 4px;
+height: 4px;
+}
+.item-status {
+margin-right: 0;
+}
+}
+@media screen and (max-width: 880px) {
+.messages-section {
+transform: translateX(100%);
+position: absolute;
+opacity: 0;
+top: 0;
+z-index: 2;
+height: 100%;
+width: 100%;
+}
+.messages-section .messages-close {
+display: block;
+}
+.messages-btn {
+display: flex;
+}
+}
