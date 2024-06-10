@@ -970,4 +970,182 @@ top: 10px;
         font-size: .8em;
     }
     }
+
+    /* ICONS */
+.trending-podcast-section {
+  padding-bottom: 60px;
+}
+
+ /* Base Styles */
+ :root {
+  --heart-color: red;
+  --bookmark-color: #fdfa12; /* A bright blue for neon effect */
+  --transition-duration: 0.3s;
+  --glow-effect: 0 0 5px, 0 0 10px, 0 0 15px;
+
+}
+
+.social-share a.badge {
+  cursor: pointer;
+  transition: transform var(--transition-duration);
+}
+
+.social-share a.badge:hover {
+  transform: scale(1.1);
+}
+
+/* Icon Specific Styles with Neon Glow */
+.heart-active i.bi-heart{
+  color: rgb(255, 66, 66); /* Core color for neon effect */
+}
+.bookmark-active i.bi-bookmar{
+   color: rgb(244, 250, 53); /* Core color for neon effect */
+  }
+
+.heart-active i.bi-heart {
+  text-shadow: 
+      var(--glow-effect) var(--heart-color), 
+      var(--glow-effect) var(--heart-color), 
+      var(--glow-effect) var(--heart-color);
+}
+
+.bookmark-active i.bi-bookmark {
+  text-shadow: 
+      var(--glow-effect) var(--bookmark-color), 
+      var(--glow-effect) var(--bookmark-color), 
+      var(--glow-effect) var(--bookmark-color);
+}
+/* FIXES */
+.badge:hover {
+  background-color: gray;
+}
+/* ########################################################### */
+
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+ 
+ 
+
+.player-sm {
+  position:  absolute;
+  bottom: 55px;
+   border: 2px solid rgb(203, 213, 203);
+   height: 120px;
+
+ 
+}
+
+.player-sm,#control-panel{
+  width: 100%;
+  max-width: 600px;
+  left: auto;
+  right: auto;
+  border-radius: 15px;
+}
+
+.player-sm .info {
+  position: absolute;
+  height: 90px;
+  top: 0;
+  opacity: 0;
+  left: 10px;
+  right: 10px;
+  
+  background-color: rgba(255, 255, 255, 0.5);/*rgba(255, 255, 255, 0.5) */
+  padding: 5px 15px 5px 135px;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+.player-sm .info .artist,
+.player-sm .info .name {
+  display: block;
+}
+.player-sm .info .artist {
+  color: #222;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.player-sm .info .name {
+  color: #999;
+  font-size: 12px; 
+  margin-bottom: 8px;
+}
+.player-sm .info .progress-bar {
+  background-color: #ddd;
+  height: 8px;
+  width: 100%;
+  position: relative;
+}
+.player-sm .info .progress-bar .bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: red;
+  width: 10%;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+.player-sm .info.active {
+  top: -60px;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.player-sm .control-panel {
+  position: relative;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 400px;
+  height: 120px;
+  z-index: 5;
+  box-shadow: 0px 20px 20px 5px rgba(132, 132, 132, 0.3);
+}
+.player-sm .control-panel .album-art {
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0);
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+.player-sm .control-panel .album-art::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+
+.player-sm .control-panel .album-art::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  /* Provide a valid URL for the background image */
+  background-image: url( );
+  background-size: cover;
+  /* Add animation properties here */
+  
+}
+
+.player-sm .control-panel.active .album-art {
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
  
