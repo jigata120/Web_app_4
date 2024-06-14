@@ -1,0 +1,148 @@
+/* body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(-45deg, #2196F3 50%, #EEEEEE 50%);
+    background-repeat: no-repeat;
+} */
+
+.card {
+    background-color: #FFF;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 40px;
+    z-index: 0;
+}
+
+.heading {
+    font-weight: normal;
+}
+
+.desc {
+    font-size: 14px;
+}
+
+/*Icon progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+    padding-left: 0px;
+}
+
+#progressbar .active {
+    color: #673AB7;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 20%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+
+#progressbar .step0:before {
+    content: "";
+}
+
+#progressbar li:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    background: #E0E0E0;
+    border-radius: 50%;
+    margin: auto;
+    padding: 2px;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    background: #E0E0E0;
+    position: absolute;
+    left: 0;
+    top: 17px;
+    z-index: -1;
+}
+
+#progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #F9A825;
+}
+
+.sub-heading {
+    font-weight: 500;
+}
+
+.yellow-text {
+    color: #F9A825;
+}
+
+fieldset.show {
+    display: block;
+}
+
+fieldset {
+    display: none;
+}
+
+.radio {
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #BDBDBD;
+    font-weight: 500;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%); 
+}
+
+.container-fluid .container-fluid button.radio:hover {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid .radio.selected {
+    border: 1px solid #F9A825;
+    box-shadow: 0px 8px 16px 0px #EEEEEE;
+    color: #29B6F6 !important;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.container-fluid .card-block {
+    border: 1px solid #CFD8DC;
+    width: 45%;
+    margin: 2.5%;
+    padding: 20px 25px 15px 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-block {
+        padding: 20px 20px 0px 20px;
+        /* height: 250px; */
+    }
+}
+
+ 
