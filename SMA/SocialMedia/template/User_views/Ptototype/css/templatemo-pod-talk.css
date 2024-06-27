@@ -474,3 +474,125 @@ main {
 }
 
 
+/*---------------------------------------
+  CAROUSEL        
+-----------------------------------------*/
+.hero-section {
+  background-image: url('../images/templatemo-wave-banner.jpg'), linear-gradient(#348CD2, #FFFFFF);
+  background-repeat: no-repeat;
+  background-size: 108% 76%;
+  background-position: top;
+  padding-top: 200px;
+}
+
+.owl-carousel {
+  text-align: center;
+}
+
+.owl-carousel-image {
+  display: block;
+}
+
+.owl-carousel .owl-item .owl-carousel-verified-image {
+  display: inline-block;
+  width: 30px;
+  height: auto;
+  position: relative;
+  right: 5px;
+}
+
+.verified-image {
+  display: inline-block;
+  width: 20px;
+  height: auto;
+}
+
+.owl-carousel .owl-item {
+  opacity: 0.35;
+}
+
+.owl-carousel .owl-item.active.center {
+  opacity: 1;
+}
+
+.owl-carousel-info-wrap {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.owl-carousel-info {
+  background-color: var(--section-bg-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 30px;
+}
+
+.badge {
+  background-color: var(--custom-btn-bg-color);
+  font-family: var(--title-font-family);
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  padding-bottom: 5px;
+}
+
+.owl-carousel-info-wrap .social-share,
+.team-thumb .social-share {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.owl-carousel-info-wrap .social-icon,
+.team-thumb .social-icon {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.owl-carousel .owl-item.active.center .owl-carousel-info-wrap:hover .social-icon,
+.team-thumb:hover .social-icon {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.owl-carousel-info-wrap .social-icon-item,
+.owl-carousel-info-wrap .social-icon-link,
+.team-thumb .social-icon-item,
+.team-thumb .social-icon-link {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+
+.owl-carousel-info-wrap .social-icon-link {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.owl-carousel .owl-dots {
+  background-color: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  border-radius: var(--border-radius-large);
+  display: inline-block;
+  margin: auto;
+  margin-top: 40px;
+  padding: 15px 25px;
+  padding-bottom: 7px;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top: 40px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--secondary-color);
+}
+
