@@ -596,3 +596,218 @@ main {
   background: var(--secondary-color);
 }
 
+
+/*---------------------------------------
+  CUSTOM BLOCK              
+-----------------------------------------*/
+.custom-block {
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  /* 30px */
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+
+.custom-block:hover {
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+.custom-block-info {
+  display: block;
+  /* padding: 10px 20px; */
+  padding-bottom: 0;
+}
+
+.custom-block-image-wrap {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.episode-text{
+  padding-left:10px ;
+}
+.bottom-gap{
+  margin-bottom: 70px;
+}
+.top-gap{
+  margin-top: 20px;
+}
+
+.custom-block-image-wrap > a {
+  display: block;
+}
+.episode{
+  margin: 20px auto;
+  width: 100%;
+
+  max-width: 390px;
+  max-height: 80px;
+  margin-bottom: 20px;
+}
+.justify-content-center{
+  gap: 2.5em;
+}
+.custom-block-image {
+  border-radius: var(--border-radius-medium);
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+}
+
+.custom-block-image-detail-page .custom-block-image {
+  width: 100%;
+  height: 212px;
+}
+
+.custom-block .custom-block-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-block-icon-wrap {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-block-icon-wrap .section-overlay {
+  opacity: 0.25;
+}
+
+.custom-block-btn-group {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 20px;
+}
+
+.custom-block-btn-group .custom-block-icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+.custom-block-icon {
+  background: var(--primary-color);
+  border-radius: var(--border-radius-medium);
+  font-size: var(--p-font-size);
+  color: var(--white-color);
+  text-align: center;
+  width: 32.5px;
+  height: 32.5px;
+  line-height: 32.5px;
+  transition: all 0.3s;
+}
+
+.custom-block-icon:hover {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.custom-block .custom-btn {
+  font-size: var(--menu-font-size);
+  padding: 7px 15px;
+}
+
+.custom-block .custom-block-info + div .badge {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 50px !important;
+  font-size: var(--menu-font-size);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.custom-block .custom-block-info +  {
+  background-color: var(--secondary-color);
+}
+
+.custom-block-full {
+  background-color: var(--section-bg-color);
+  border-color: transparent;
+}
+
+.custom-block-full:hover {
+  border-color: var(--primary-color);
+}
+
+.custom-block-full .custom-block-info {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.custom-block-full .custom-block-image {
+  width: 100%;
+  height: 210px;
+}
+
+.custom-block-full .social-share {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 50px;
+}
+
+.custom-block-top small {
+  color: var(--p-color);
+  font-family: var(--title-font-family);
+}
+
+.custom-block-top .badge {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  display: inline-block;
+  vertical-align: middle;
+  height: 25px;
+  line-height: 20px;
+}
+
+.custom-block-bottom a:hover span {
+  color: var(--primary-color);
+}
+
+.custom-block-bottom a span {
+  font-family: var(--title-font-family);
+  color: var(--p-color);
+  text-transform: uppercase;
+  margin-left: 3px;
+}
+
+.custom-block-overlay {
+  border-color: transparent;
+  padding: 0;
+}
+
+.custom-block-overlay .custom-block-image {
+  margin: auto;
+  width: 100%;
+  height: 210px;
+  transition: all 0.3s;
+}
+
+.custom-block-overlay:hover .custom-block-image {
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.custom-block-overlay-info {
+  padding: 15px 20px 20px 20px;
+}
+
