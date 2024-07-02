@@ -811,3 +811,33 @@ main {
   padding: 15px 20px 20px 20px;
 }
 
+
+/*---------------------------------------
+  PROIFLE BLOCK               
+-----------------------------------------*/
+.profile-block {
+  margin-top: 10px;
+}
+
+.profile-block-image {
+  border-radius: var(--border-radius-large);
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.profile-block p strong {
+  display: block;
+  font-family: var(--title-font-family);
+}
+
+.profile-detail-block {
+  border: 1px solid #dee2e6;
+  border-radius: var(--border-radius-large);
+  padding: 25px 35px;
+}
+
+.profile-detail-block p {
+  margin-bottom: 0;
+}
