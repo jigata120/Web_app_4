@@ -841,3 +841,28 @@ main {
 .profile-detail-block p {
   margin-bottom: 0;
 }
+
+
+/*---------------------------------------
+  ABOUT & TEAM SECTION               
+-----------------------------------------*/
+.about-image {
+  border-radius: var(--border-radius-medium);
+  display: block;
+}
+
+.team-thumb {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-info {
+  background-color: var(--white-color);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 30px;
+}
+
