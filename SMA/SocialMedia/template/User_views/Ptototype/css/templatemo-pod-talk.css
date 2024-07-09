@@ -901,3 +901,188 @@ main {
   border-color: var(--secondary-color);
 }
 
+
+/*---------------------------------------
+  CONTACT               
+-----------------------------------------*/
+.contact-info p strong {
+  font-family: var(--title-font-family);
+  min-width: 90px;
+}
+
+.contact-info p a {
+  color: var(--p-color);
+  border-bottom: 1px solid;
+  padding-bottom: 3px;
+}
+
+.contact-info p a:hover {
+  color: var(--secondary-color);
+}
+
+.google-map {
+  border-radius: var(--border-radius-medium);
+}
+
+.contact-form .form-floating>textarea {
+  border-radius: var(--border-radius-medium);
+  height: 150px;
+}
+
+
+/*---------------------------------------
+  SUBSCRIBE FORM               
+-----------------------------------------*/
+.subscribe-form-wrap {
+  border: 1px solid var(--white-color);
+  border-radius: var(--border-radius-small);
+  width: 80%;
+  position: relative;
+  top: 12px;
+  padding: 35px;
+}
+
+.subscribe-form-wrap h6 {
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  color: var(--primary-color);
+  text-align: center;
+  position: relative;
+  bottom: 55px;
+  margin-bottom: -25px;
+  padding: 8px;
+}
+
+.subscribe-form #subscribe-email {
+  border: 0;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+
+.subscribe-form #submit {
+  border-radius: 0 0 10px 10px;
+}
+
+
+/*---------------------------------------
+  CUSTOM FORM               
+-----------------------------------------*/
+.custom-form .form-control {
+  border-radius: var(--border-radius-small);
+  color: var(--p-color);
+  font-family: var(--title-font-family);
+  font-size: var(--p-font-size);
+  margin-bottom: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.form-floating>label {
+  padding-left: 20px;
+}
+
+.custom-form button[type="submit"] {
+  background: var(--custom-btn-bg-color);
+  border: none;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-family: var(--title-font-family);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.custom-form button[type="submit"]:hover,
+.custom-form button[type="submit"]:focus {
+  background: var(--custom-btn-bg-hover-color);
+  border-color: transparent;
+}
+
+
+/*---------------------------------------
+  SEARCH FORM               
+-----------------------------------------*/
+.search-form .form-control {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.search-form button[type="submit"] {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  max-width: 50px;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.search-form button[type="submit"]:hover {
+  background: var(--primary-color);
+}
+
+
+/*---------------------------------------
+  SITE FOOTER              
+-----------------------------------------*/
+.site-footer {
+  background-image: url('../images/templatemo-wave-footer.jpg'), linear-gradient(#FFFFFF, #348CD2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -80px;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.site-footer > .container {
+  position: relative;
+  top: 50px;
+  padding-top: 100px;
+}
+
+.site-footer-title,
+.site-footer p {
+  color: var(--white-color);
+}
+
+.site-footer p strong {
+  font-family: var(--title-font-family);
+}
+
+.site-footer p a {
+  color: var(--white-color);
+  border-bottom: 1px solid;
+  padding-bottom: 3px;
+}
+
+.site-footer p a:hover {
+  color: var(--secondary-color);
+}
+
+.site-footer-thumb a img {
+  display: block;
+  width: 120px;
+  min-width: 120px;
+  height: auto;
+}
+
+.site-footer-links {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.site-footer-link-item {
+  display: inline-block;
+  list-style: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.site-footer-link {
+  color: var(--white-color);
+  font-size: var(--p-font-size);
+  line-height: inherit;
+}
+
