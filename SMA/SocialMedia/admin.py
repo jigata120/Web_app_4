@@ -1,7 +1,12 @@
-from django.contrib import admin
+
 from .models import *
-# Register your models here.
-admin.site.register(Post)
-admin.site.register(Comment)
-admin.site.register(Quotes)
+from django.contrib import admin
+from django import forms
+from .models import Users
+
+
+
+admin.site.register(Videos)
+admin.site.register(Courses)
+admin.site.register(Users)
 
