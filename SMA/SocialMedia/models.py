@@ -1,33 +1,29 @@
 from django.db import models
-#from taggit.managers import TaggableManager
-from django.contrib.auth.models import User
+
 # Create your models here.
-
-class Comment(models.Model):
-    text = models.TextField(max_length=100)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    #post = models.ForeignKey(Post, on_delete=models.CASCADE)
-#__str__
+class Videos(models.Model):
+    video_id = models.CharField(max_length=10)
+    video_title = models.CharField(max_length=150)
 
 
-class Post(models.Model):
-    text = models.TextField(max_length=100)
-    image = models.ImageField(upload_to='images/')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-   #tags = TaggableManager()
-    likes_count = models.IntegerField(default=0,blank=True)
-    likes = models.ManyToManyField(User, blank=True, related_name='likes')
-    saves = models.ManyToManyField(User, blank=True, related_name='saves')
-    comments = models.ManyToManyField(Comment, blank=True)
-#__str__
-class Quotes(models.Model):
-    text = models.TextField(max_length=500)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    #tags = TaggableManager()
-    likes_count = models.IntegerField(default=0)
-    likes = models.ManyToManyField(User, blank=True, related_name='users_liked')
-    saves = models.ManyToManyField(User, blank=True, related_name='users_commented')
-    comments = models.ManyToManyField(Comment, blank=True)
-#__str__
+    def __str__(self):
+        return self.video_title
+
+class Users(models.Model):
+    username = models.CharField(max_length=50)
+    email = models.EmailField()
+    password = models.CharField(max_length=20)
+    watched_videos = models.ManyToManyField( to='Videos',related_name="w_videos",blank=True,null=True)
+    pins_on_videos = models.JSONField()
+    enrolled_courses = models.ManyToManyField('Courses',related_name="e_courses",blank=True,null=True)
+    owned_courses = models.ManyToManyField('Courses',related_name="o_courses",blank=True,null=True)
+
+    def __str__(self):
+        return self.username
+
+class Courses(models.Model):
+    owner = models.ForeignKey(Users,on_delete=models.CASCADE)
+    videos = models.ManyToManyField(Videos,related_name='c_videos',blank=True,null=True)
+    members = models.ManyToManyField(Users,related_name='c_members',blank=True,null=True)
+
+
